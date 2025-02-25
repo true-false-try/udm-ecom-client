@@ -1,19 +1,15 @@
 import './App.css';
-import Header from "./components/Header.jsx";
-import About from "./components/About.jsx";
-import ProjectList from "./components/ProjectList.jsx";
-import Contact from "./components/Contact.jsx";
-import Footer from "./components/Footer.jsx";
+import ProfileCard from "./components/ProfileCard.jsx";
 
 function App() {
   return (
-      <div className="App">
-          <Header />
-          <About />
-          <ProjectList />
-          <Contact />
-          <Footer />
-      </div>
+     <div>
+         <h1>
+             HELLO
+             <ProfileCard name="Alice" age="24" num="2"/>
+             <ProfileCard name="John" age="34" num={2}/>
+         </h1>
+     </div>
   )
 }
 
