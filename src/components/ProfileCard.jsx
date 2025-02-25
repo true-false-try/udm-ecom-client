@@ -1,5 +1,4 @@
-function ProfileCard(props){
-    const {name, age, isMember} = props;
+function ProfileCard({name ="defaultUser", age=0, isMember=false}){
     return(
       <div>
           <h3>Name: {name}</h3>

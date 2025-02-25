@@ -7,6 +7,7 @@ function App() {
          <h1>HELLO</h1>
          <ProfileCard name="Alice" age="24" isMember={true} />
          <ProfileCard name="John" age="34" isMember={false} />
+         <ProfileCard />
      </div>
   )
 }
