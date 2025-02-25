@@ -4,11 +4,9 @@ import ProfileCard from "./components/ProfileCard.jsx";
 function App() {
   return (
      <div>
-         <h1>
-             HELLO
-             <ProfileCard name="Alice" age="24" num="2"/>
-             <ProfileCard name="John" age="34" num={2}/>
-         </h1>
+         <h1>HELLO</h1>
+         <ProfileCard name="Alice" age="24" isMember={true} />
+         <ProfileCard name="John" age="34" isMember={false} />
      </div>
   )
 }
