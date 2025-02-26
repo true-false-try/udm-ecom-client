@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function ProfileCard({name ="defaultUser", age=0, isMember=false}){
     return(
       <div>
@@ -6,6 +8,12 @@ function ProfileCard({name ="defaultUser", age=0, isMember=false}){
           <h3>Status: {isMember ? "Active Member" : "Guest"}</h3>
       </div>
     );
+}
+
+ProfileCard.propTypes = {
+    name: PropTypes.string,
+    age: PropTypes.number,
+    isMember: PropTypes.bool,
 }
 
 export default ProfileCard;
