@@ -1,5 +1,7 @@
 import './App.css';
 import ProfileCard from "./components/ProfileCard.jsx";
+import React, {useState} from "react";
+import Sandbox from "./components/Sandbox.jsx";
 
 function App() {
     const hobby = ["Reading", "Cooking"];
@@ -29,6 +31,7 @@ function App() {
          <ProfileCard {...aliceProfile}/>
          <ProfileCard {...johnProfile}/>
          <ProfileCard />
+         <Sandbox />
      </div>
   )
 }
