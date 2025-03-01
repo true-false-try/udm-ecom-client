@@ -3,6 +3,7 @@ import ProfileCard from "./components/ProfileCard.jsx";
 import React, {useState} from "react";
 import Sandbox from "./components/Sandbox.jsx";
 import ArrayIncrDecrButtons from "./components/ArrayIncrDecrButtons.jsx";
+import Forms from "./components/Forms.jsx";
 
 function App() {
     const hobby = ["Reading", "Cooking"];
@@ -34,6 +35,7 @@ function App() {
          <ProfileCard />
          <Sandbox />
          <ArrayIncrDecrButtons />
+         <Forms />
      </div>
   )
 }
