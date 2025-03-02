@@ -1,9 +1,9 @@
 import './App.css';
 import ProfileCard from "./components/ProfileCard.jsx";
-import React, {useState} from "react";
 import Sandbox from "./components/Sandbox.jsx";
 import ArrayIncrDecrButtons from "./components/ArrayIncrDecrButtons.jsx";
 import Forms from "./components/Forms.jsx";
+import ColorSwitcher from "./components/ColorSwitcher.jsx";
 
 function App() {
     const hobby = ["Reading", "Cooking"];
@@ -36,6 +36,7 @@ function App() {
          <Sandbox />
          <ArrayIncrDecrButtons />
          <Forms />
+         <ColorSwitcher />
      </div>
   )
 }

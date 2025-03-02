@@ -15,7 +15,7 @@ function Sandbox (){
     };
 
     return(
-        <div className="App">
+        <div>
             <h1>Hello CodeSandbox</h1>
             <h2>You clicked {count} times!</h2>
             <input type='number' value={step} onChange={(e) => setStep(parseInt(e.target.value))}></input>
