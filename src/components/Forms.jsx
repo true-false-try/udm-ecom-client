@@ -4,8 +4,8 @@ function Forms(){
     const [formData, setFormData] = useState({
         text: "",
         checkbox: false,
-        radio: '',
-        select: ''
+        radio: "",
+        select: ""
     });
     const handleChange = (e) => {
         const {name, value, type, checked} = e.target;
@@ -33,12 +33,12 @@ function Forms(){
                     <label>Radio:</label>
 
                     <label>
-                        <input type='radio' name='radio ' value = 'option1'  checked={formData.radio === 'option1'} onChange={handleChange}/>
+                        <input type='radio' name='radio' value = 'option1'  checked={formData.radio === 'option1'} onChange={handleChange}/>
                         Option 1
                     </label>
 
                     <label>
-                        <input type='radio' name='radio ' value = 'option2'  checked={formData.radio === 'option2'} onChange={handleChange}/>
+                        <input type='radio' name='radio' value = 'option2'  checked={formData.radio === 'option2'} onChange={handleChange}/>
                         Option 2
                     </label>
                 </div>
