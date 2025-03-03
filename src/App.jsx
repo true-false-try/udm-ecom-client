@@ -5,6 +5,7 @@ import ArrayIncrDecrButtons from "./components/ArrayIncrDecrButtons.jsx";
 import Forms from "./components/Forms.jsx";
 import ColorSwitcher from "./components/ColorSwitcher.jsx";
 import UseEffect from "./components/UseEffect.jsx";
+import MouseTracker from "./components/MouseTracker.jsx";
 
 function App() {
     const hobby = ["Reading", "Cooking"];
@@ -39,6 +40,7 @@ function App() {
          <Forms />
          <ColorSwitcher />
          <UseEffect />
+         <MouseTracker />
      </div>
   )
 }
