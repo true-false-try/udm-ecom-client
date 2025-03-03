@@ -4,6 +4,7 @@ import Sandbox from "./components/Sandbox.jsx";
 import ArrayIncrDecrButtons from "./components/ArrayIncrDecrButtons.jsx";
 import Forms from "./components/Forms.jsx";
 import ColorSwitcher from "./components/ColorSwitcher.jsx";
+import UseEffect from "./components/UseEffect.jsx";
 
 function App() {
     const hobby = ["Reading", "Cooking"];
@@ -37,6 +38,7 @@ function App() {
          <ArrayIncrDecrButtons />
          <Forms />
          <ColorSwitcher />
+         <UseEffect />
      </div>
   )
 }
