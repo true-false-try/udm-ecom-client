@@ -7,6 +7,7 @@ import ColorSwitcher from "./components/ColorSwitcher.jsx";
 import UseEffect from "./components/UseEffect.jsx";
 import MouseTracker from "./components/MouseTracker.jsx";
 import ParentComponent from "./components/ParentComponent.jsx";
+import DigitalClock from "./components/DigitalClock.jsx";
 
 function App() {
     const hobby = ["Reading", "Cooking"];
@@ -42,6 +43,7 @@ function App() {
          <ColorSwitcher />
          <UseEffect />
          <ParentComponent />
+         <DigitalClock />
      </div>
   )
 }
