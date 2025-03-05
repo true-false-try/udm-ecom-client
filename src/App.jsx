@@ -9,6 +9,7 @@ import MouseTracker from "./components/MouseTracker.jsx";
 import ParentComponent from "./components/ParentComponent.jsx";
 import DigitalClock from "./components/DigitalClock.jsx";
 import UseRefHook from "./components/UseRefHook.jsx";
+import UseRefHookWithHtml from "./components/UseRefHookWithHtml.jsx";
 
 function App() {
     const hobby = ["Reading", "Cooking"];
@@ -46,6 +47,7 @@ function App() {
          <ParentComponent />
          <DigitalClock />
          <UseRefHook />
+         <UseRefHookWithHtml />
      </div>
   )
 }
