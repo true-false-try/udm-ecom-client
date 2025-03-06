@@ -4,12 +4,14 @@ const ThemeContext = createContext('light');
 
 function PropDrilling(){
     return(
-        <div>
-            <div style={{border:'2px solid black', padding:'20px'}}>
-                <h2>PropDrill (Parent)</h2>
-                <ComponentA theme={ThemeContext} />
+        <ThemeContext.Provider value='dark'>
+            <div>
+                <div style={{border:'2px solid black', padding:'20px'}}>
+                    <h2>PropDrill (Parent)</h2>
+                    <ComponentA/>
+                </div>
             </div>
-        </div>
+        </ThemeContext.Provider>
     );
 }
 
