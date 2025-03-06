@@ -5,11 +5,11 @@ import ArrayIncrDecrButtons from "./components/ArrayIncrDecrButtons.jsx";
 import Forms from "./components/Forms.jsx";
 import ColorSwitcher from "./components/ColorSwitcher.jsx";
 import UseEffect from "./components/UseEffect.jsx";
-import MouseTracker from "./components/MouseTracker.jsx";
 import ParentComponent from "./components/ParentComponent.jsx";
 import DigitalClock from "./components/DigitalClock.jsx";
 import UseRefHook from "./components/UseRefHook.jsx";
 import UseRefHookWithHtml from "./components/UseRefHookWithHtml.jsx";
+import PropDrilling from "./components/PropDrilling.jsx";
 
 function App() {
     const hobby = ["Reading", "Cooking"];
@@ -48,6 +48,7 @@ function App() {
          <DigitalClock />
          <UseRefHook />
          <UseRefHookWithHtml />
+         <PropDrilling />
      </div>
   )
 }
