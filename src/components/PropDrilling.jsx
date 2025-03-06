@@ -1,5 +1,5 @@
 import {createContext, useContext, useState} from "react";
-const ThemeContext = createContext();
+const ThemeContext = createContext('light');
 
 
 function PropDrilling(){
@@ -11,15 +11,22 @@ function PropDrilling(){
     };
 
     return(
-        <ThemeContext.Provider value={theme}>
-            <div>
-                <div style={{border:'2px solid black', padding:'20px'}}>
-                    <h2>PropDrill (Parent)</h2>
-                    <button onClick={toggleTheme}>Toggle Theme</button>
-                    <ComponentA />
+        <div>
+            <GlobalComponent />
+            <ThemeContext.Provider value={theme}>
+                <div>
+                    <div style={{border:'2px solid black', padding:'20px'}}>
+                        <h2>PropDrill (Parent)</h2>
+                        <button onClick={toggleTheme}>Toggle Theme</button>
+                        <ComponentA />
+                    </div>
                 </div>
-            </div>
-        </ThemeContext.Provider>
+            </ThemeContext.Provider>
+
+            <ThemeContext.Provider value={theme}>
+                <GlobalComponent />
+            </ThemeContext.Provider>
+        </div>
     );
 }
 
@@ -49,6 +56,16 @@ function ThemedComponent(){
           <h2>ThemedComponent (Child)</h2>
           The current theme is: {theme}
       </div>
+    );
+}
+
+function GlobalComponent(){
+    const theme = useContext(ThemeContext);
+    return (
+        <div style={{border:'2px solid purple', padding:'20px'}}>
+            <h2>GlobalComponent (Outside Provider)</h2>
+            The current theme is: {theme}
+        </div>
     );
 }
 
