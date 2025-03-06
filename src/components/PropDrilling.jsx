@@ -1,10 +1,13 @@
+import {createContext, useContext} from "react";
+const ThemeContext = createContext('light');
+
+
 function PropDrilling(){
-    const theme = 'dark';
     return(
         <div>
             <div style={{border:'2px solid black', padding:'20px'}}>
                 <h2>PropDrill (Parent)</h2>
-                <ComponentA theme={theme} />
+                <ComponentA theme={ThemeContext} />
             </div>
         </div>
     );
@@ -29,7 +32,8 @@ function ComponentB({theme}){
     );
 }
 
-function ThemedComponent({theme}){``
+function ThemedComponent(){
+    const theme = useContext(ThemeContext);
     return (
       <div style={{border:'2px solid black', padding:'20px'}}>
           <h2>ThemedComponent (Child)</h2>
