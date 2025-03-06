@@ -1,14 +1,22 @@
-import {createContext, useContext} from "react";
-const ThemeContext = createContext('light');
+import {createContext, useContext, useState} from "react";
+const ThemeContext = createContext();
 
 
 function PropDrilling(){
+    const [theme, setTheme] = useState('light')
+    const toggleTheme = () => {
+        setTheme((prevTheme) => (
+            prevTheme === 'light' ? 'dark' : 'light'
+        ));
+    };
+
     return(
-        <ThemeContext.Provider value='dark'>
+        <ThemeContext.Provider value={theme}>
             <div>
                 <div style={{border:'2px solid black', padding:'20px'}}>
                     <h2>PropDrill (Parent)</h2>
-                    <ComponentA/>
+                    <button onClick={toggleTheme}>Toggle Theme</button>
+                    <ComponentA />
                 </div>
             </div>
         </ThemeContext.Provider>
