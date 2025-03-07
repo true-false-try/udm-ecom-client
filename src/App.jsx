@@ -10,6 +10,7 @@ import DigitalClock from "./components/DigitalClock.jsx";
 import UseRefHook from "./components/UseRefHook.jsx";
 import UseRefHookWithHtml from "./components/UseRefHookWithHtml.jsx";
 import PropDrilling from "./components/PropDrilling.jsx";
+import CustomHook from "./components/CustomHook.jsx";
 
 function App() {
     const hobby = ["Reading", "Cooking"];
@@ -49,6 +50,7 @@ function App() {
          <UseRefHook />
          <UseRefHookWithHtml />
          <PropDrilling />
+         <CustomHook />
      </div>
   )
 }
