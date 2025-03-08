@@ -36,7 +36,7 @@ function App() {
 
     return (
      <div className="app-container">
-         <h1>HELLO</h1>
+         {/*<h1>HELLO</h1>
          <ProfileCard {...aliceProfile}/>
          <ProfileCard {...johnProfile}/>
          <ProfileCard />
@@ -50,7 +50,7 @@ function App() {
          <UseRefHook />
          <UseRefHookWithHtml />
          <PropDrilling />
-         <CustomHook />
+         <CustomHook />*/}
      </div>
   )
 }
