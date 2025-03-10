@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import axios from "axios";
 
 function JsonPlaceholderAPIs(){
     const [data, setData] = useState([]);
@@ -7,12 +8,12 @@ function JsonPlaceholderAPIs(){
 
     useEffect(() => {
         setLoading(true);
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then(response => response.json())
-            .then(json => {
-                setData(json)
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+            .then((response) => {
+                console.log(response);
+                setData(response.data)
                 setLoading(false);
-                throw new Error('Something went wrong');
+                //throw new Error('Something went wrong');
             })
             .catch((error) => {
                 console.error('Error fetching data: ', error);
