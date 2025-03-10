@@ -12,7 +12,7 @@ function JsonPlaceholderAPIs(){
             <h1>Json placeholder API</h1>
             <ul>
                 {data.map((post) => (
-                    <li key={id}>
+                    <li key={post.id}>
                         <p>{post.title}</p>
                         <p>{post.body}</p>
                     </li>
