@@ -1,23 +1,6 @@
-import axios from "axios";
 import {useState} from "react";
 
-const api = axios.create({
-    baseURL:'https://jsonplaceholder.typicode.com',
-    headers:{
-        'Authorization':'Barear <TOKEN>',
-        'Content-Type':'application/json'
-    }
-});
-
-api.interceptors.request.use(request => {
-    console.log('Starting Request', request)
-    return request;
-});
-
-api.interceptors.response.use(response => {
-    console.log('Starting Response', response)
-    return response;
-});
+import api from "../api/Api.js";
 
 function PostJsonPlaceholderAPIs(){
     const [data, setData] = useState();
