@@ -8,13 +8,17 @@ function JsonPlaceholderAPIs(){
 
     useEffect(() => {
         setLoading(true);
-        axios.get('https://jsonplaceholder.typicode.com/posts')
-            .then((response) => {
-                console.log(response);
-                setData(response.data)
+        axios.all([
+            axios.get('https://jsonplaceholder.typicode.com/posts'),
+            axios.get('https://jsonplaceholder.typicode.com/users')
+        ])
+            .then(axios.spread((posts, users) => {
+                console.log(posts);
+                console.log(users);
+                setData(posts.data)
                 setLoading(false);
                 //throw new Error('Something went wrong');
-            })
+            }))
             .catch((error) => {
                 console.error('Error fetching data: ', error);
                 setError('Failed to fetch the data');
