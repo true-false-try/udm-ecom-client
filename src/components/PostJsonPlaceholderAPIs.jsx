@@ -1,13 +1,21 @@
 import axios from "axios";
 import {useState} from "react";
 
-axios.interceptors.request.use(request => {
-    console.log('Starting Request')
+const api = axios.create({
+    baseURL:'https://jsonplaceholder.typicode.com',
+    headers:{
+        'Authorization':'Barear <TOKEN>',
+        'Content-Type':'application/json'
+    }
+});
+
+api.interceptors.request.use(request => {
+    console.log('Starting Request', request)
     return request;
 });
 
-axios.interceptors.response.use(response => {
-    console.log('Starting Response')
+api.interceptors.response.use(response => {
+    console.log('Starting Response', response)
     return response;
 });
 
@@ -20,7 +28,7 @@ function PostJsonPlaceholderAPIs(){
             body:'bar',
             userId:1,
         };
-        axios.post('https://jsonplaceholder.typicode.com/posts', newPost)
+        api.post('/posts', newPost)
             .then(response =>  {
                 console.log('New Post Added: ', response.data);
                 setData([response.data]);
