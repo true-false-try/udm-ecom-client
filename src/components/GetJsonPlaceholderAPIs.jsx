@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-function JsonPlaceholderAPIs(){
+function GetJsonPlaceholderAPIs(){
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -48,4 +48,4 @@ function JsonPlaceholderAPIs(){
     );
 }
 
-export default JsonPlaceholderAPIs;
+export default GetJsonPlaceholderAPIs;

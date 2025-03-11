@@ -11,7 +11,8 @@ import UseRefHook from "./components/UseRefHook.jsx";
 import UseRefHookWithHtml from "./components/UseRefHookWithHtml.jsx";
 import PropDrilling from "./components/PropDrilling.jsx";
 import CustomHook from "./components/CustomHook.jsx";
-import JsonPlaceholderAPIs from "./components/JsonPlaceholderAPIs.jsx";
+import GetJsonPlaceholderAPIs from "./components/GetJsonPlaceholderAPIs.jsx";
+import PostJsonPlaceholderAPIs from "./components/PostJsonPlaceholderAPIs.jsx";
 
 function App() {
     const hobby = ["Reading", "Cooking"];
@@ -51,9 +52,10 @@ function App() {
          <UseRefHook />
          <UseRefHookWithHtml />
          <PropDrilling />
-         <CustomHook />*/
+         <CustomHook />
+         <GetJsonPlaceholderAPIs />*/
          }
-         <JsonPlaceholderAPIs />
+         <PostJsonPlaceholderAPIs />
      </div>
   )
 }
