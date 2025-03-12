@@ -13,6 +13,7 @@ import PropDrilling from "./components/PropDrilling.jsx";
 import CustomHook from "./components/CustomHook.jsx";
 import GetJsonPlaceholderAPIs from "./components/GetJsonPlaceholderAPIs.jsx";
 import PostJsonPlaceholderAPIs from "./components/PostJsonPlaceholderAPIs.jsx";
+import Forms2 from "./components/Forms2.jsx";
 
 function App() {
     const hobby = ["Reading", "Cooking"];
@@ -53,9 +54,10 @@ function App() {
          <UseRefHookWithHtml />
          <PropDrilling />
          <CustomHook />
-         <GetJsonPlaceholderAPIs />*/
+         <GetJsonPlaceholderAPIs />
+         <PostJsonPlaceholderAPIs />*/
          }
-         <PostJsonPlaceholderAPIs />
+         <Forms2 />
      </div>
   )
 }
