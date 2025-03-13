@@ -1,46 +1,20 @@
-import {useState} from "react";
+import {useForm} from "react-hook-form";
 
 function Forms2(){
-    const [formData, setFormData] = useState({name:''});
-
-    const [errors, setErrors] = useState({});
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const validationErrors = validate();
-        if(Object.keys(validationErrors).length > 0) {
-            setErrors(validationErrors);
-        } else {
-            console.log('For Data Submitted ', formData);
-        }
-    };
-
-    const validate = () => {
-        const newErrors = {};
-        if (!formData.name.trim()){
-            newErrors.name = 'Name is required'
-        }
-        return newErrors;
-    };
-
-    const handleChange = (e) => {
-        console.log(formData.name);
-        setFormData({
-            ...formData,
-            [e.target.name] : e.target.value,
-        })
-    };
+    const {register, handleSubmit} = useForm();
+    const onSubmit = (data) => console.log(data);
     return(
         <div>
             <h1>Forms in React</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <label>
                     Name:
-                    <input type='text' name='name' value={formData.name} onChange={handleChange}/>
-                    {errors.name && <span style={{color:'red'}}>{errors.name}</span>}
-                    <br/>
+                    <input{...register('name', )}/>
                 </label>
-
+                <label>
+                    Email:
+                    <input {...register('email')}/>
+                </label>
                 <button type='submit'>Submit</button>
             </form>
         </div>
