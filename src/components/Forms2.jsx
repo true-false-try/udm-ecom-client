@@ -2,7 +2,7 @@ import {useForm} from "react-hook-form";
 import {useEffect} from "react";
 
 function Forms2(){
-    const {register, handleSubmit,watch} = useForm();
+    const {register, handleSubmit,watch,formState: {errors}} = useForm();
     const onSubmit = (data) => console.log(data);
     //console.log(watch('name'));
     const watchedName = watch('name');
@@ -20,12 +20,18 @@ function Forms2(){
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label>
                     Name:
-                    <input{...register('name', )}/>
+                    <input{...register('name',
+                        {required:true, minLength: {
+                            value: 2, message:'Name is required and should be at least 2 characters.'
+                        }})}/>
                 </label>
+                {errors.name && <p>{errors.name.message}</p>}
                 <label>
                     Email:
-                    <input {...register('email')}/>
+                    <input {...register('email', {required:true, pattern:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ })}/>
                 </label>
+                {errors.email && <p>Email is required and should be validate at regex. </p>}
+
                 <button type='submit'>Submit</button>
             </form>
         </div>
