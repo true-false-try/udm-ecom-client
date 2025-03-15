@@ -10,6 +10,13 @@ function Forms2(){
     //console.log(watch('name'));
     const watchedName = watch('name');
     const watchedEmail = watch('email');
+   /* const validateName = (value) => {
+        if(value !== 'admin') {
+            return 'Only admin is allowed'
+        }
+        return true;
+    }*/
+
     useEffect(() => {
         console.log('Name', watchedName)
     }, [watchedName]);
@@ -26,7 +33,12 @@ function Forms2(){
                     <input{...register('name',
                         {required:true, minLength: {
                             value: 2, message:'Name is required and should be at least 2 characters.'
-                        }})}/>
+                        },
+                        validate: {
+                            notAdmin: (value) => value !== "admin" || "Admin is not allowed",
+                            isNotNumber:(value) => isNaN(value) || "Name cannot be a number"
+                        }
+                        })}/>
                 </label>
                 {errors.name && <p>{errors.name.message}</p>}
                 <label>
