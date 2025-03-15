@@ -2,8 +2,11 @@ import {useForm} from "react-hook-form";
 import {useEffect} from "react";
 
 function Forms2(){
-    const {register, handleSubmit,watch,formState: {errors}} = useForm();
-    const onSubmit = (data) => console.log(data);
+    const {register, handleSubmit, reset, watch,formState: {errors}} = useForm();
+    const onSubmit = (data) => {
+        console.log(data);
+        reset();
+    };
     //console.log(watch('name'));
     const watchedName = watch('name');
     const watchedEmail = watch('email');
@@ -33,6 +36,7 @@ function Forms2(){
                 {errors.email && <p>Email is required and should be validate at regex. </p>}
 
                 <button type='submit'>Submit</button>
+                <button type='button' onClick={() => reset()}>Reset</button>
             </form>
         </div>
     );
