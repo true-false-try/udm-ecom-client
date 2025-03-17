@@ -14,6 +14,7 @@ import CustomHook from "./components/CustomHook.jsx";
 import GetJsonPlaceholderAPIs from "./components/GetJsonPlaceholderAPIs.jsx";
 import PostJsonPlaceholderAPIs from "./components/PostJsonPlaceholderAPIs.jsx";
 import Forms2 from "./components/Forms2.jsx";
+import TailwindCss from "./components/tailwindcss/TailwindCss.jsx";
 
 function App() {
     const hobby = ["Reading", "Cooking"];
@@ -55,9 +56,9 @@ function App() {
          <PropDrilling />
          <CustomHook />
          <GetJsonPlaceholderAPIs />
-         <PostJsonPlaceholderAPIs />*/
+         <PostJsonPlaceholderAPIs />
+         <Forms2 />*/
          }
-         <Forms2 />
      </div>
   )
 }
