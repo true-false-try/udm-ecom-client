@@ -1,4 +1,5 @@
 import './App.css';
+import "./index.css";
 import ProfileCard from "./components/ProfileCard.jsx";
 import Sandbox from "./components/Sandbox.jsx";
 import ArrayIncrDecrButtons from "./components/ArrayIncrDecrButtons.jsx";
@@ -14,7 +15,7 @@ import CustomHook from "./components/CustomHook.jsx";
 import GetJsonPlaceholderAPIs from "./components/GetJsonPlaceholderAPIs.jsx";
 import PostJsonPlaceholderAPIs from "./components/PostJsonPlaceholderAPIs.jsx";
 import Forms2 from "./components/Forms2.jsx";
-import TailwindCss from "./components/tailwindcss/TailwindCss.jsx";
+
 
 function App() {
     const hobby = ["Reading", "Cooking"];
@@ -39,8 +40,8 @@ function App() {
     }
 
     return (
-     <div className="app-container">
-         {/*<h1>HELLO</h1>
+        <div className="app-container">
+            {/*<h1>HELLO</h1>
          <ProfileCard {...aliceProfile}/>
          <ProfileCard {...johnProfile}/>
          <ProfileCard />
@@ -58,9 +59,14 @@ function App() {
          <GetJsonPlaceholderAPIs />
          <PostJsonPlaceholderAPIs />
          <Forms2 />*/
-         }
-     </div>
-  )
+            }
+            <div className='bg-gray-100'>
+                <h1 className="text-3xl font-bold underline">
+                    Hello TailwindCSS!
+                </h1>
+            </div>
+        </div>
+    )
 }
 
 export default App;
