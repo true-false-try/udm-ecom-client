@@ -60,11 +60,6 @@ function App() {
          <PostJsonPlaceholderAPIs />
          <Forms2 />*/
             }
-            <div className='bg-gray-100'>
-                <h1 className="text-3xl font-bold underline">
-                    Hello TailwindCSS!
-                </h1>
-            </div>
         </div>
     )
 }
