@@ -1,5 +1,6 @@
 import './App.css';
 import "./index.css";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import ProfileCard from "./components/ProfileCard.jsx";
 import Sandbox from "./components/Sandbox.jsx";
 import ArrayIncrDecrButtons from "./components/ArrayIncrDecrButtons.jsx";
@@ -15,6 +16,9 @@ import CustomHook from "./components/CustomHook.jsx";
 import GetJsonPlaceholderAPIs from "./components/GetJsonPlaceholderAPIs.jsx";
 import PostJsonPlaceholderAPIs from "./components/PostJsonPlaceholderAPIs.jsx";
 import Forms2 from "./components/Forms2.jsx";
+import Home from "./components/header/Home.jsx";
+import About from "./components/header/About.jsx";
+import Contact from "./components/header/Contact.jsx";
 
 
 function App() {
@@ -40,27 +44,13 @@ function App() {
     }
 
     return (
-        <div className="app-container">
-            {/*<h1>HELLO</h1>
-         <ProfileCard {...aliceProfile}/>
-         <ProfileCard {...johnProfile}/>
-         <ProfileCard />
-         <Sandbox />
-         <ArrayIncrDecrButtons />
-         <Forms />
-         <ColorSwitcher />
-         <UseEffect />
-         <ParentComponent />
-         <DigitalClock />
-         <UseRefHook />
-         <UseRefHookWithHtml />
-         <PropDrilling />
-         <CustomHook />
-         <GetJsonPlaceholderAPIs />
-         <PostJsonPlaceholderAPIs />
-         <Forms2 />*/
-            }
-        </div>
+        <Router>
+            <Routes>
+                <Route path='/' element={<Home />}/>
+                <Route path='/about' element={<About />}/>
+                <Route path='/contact' element={<Contact />}/>
+            </Routes>
+        </Router>
     )
 }
 
