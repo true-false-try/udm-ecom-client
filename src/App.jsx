@@ -19,6 +19,7 @@ import Forms2 from "./components/Forms2.jsx";
 import Home from "./components/header/Home.jsx";
 import About from "./components/header/About.jsx";
 import Contact from "./components/header/Contact.jsx";
+import Team from "./components/header/Team.jsx";
 
 
 function App() {
@@ -62,7 +63,9 @@ function App() {
                 <div className='container mx-aouto py-8'>
                     <Routes>
                         <Route path='/' element={<Home />}/>
-                        <Route path='/about' element={<About />}/>
+                        <Route path='/about' element={<About />}>
+                            <Route path='/about/team' element={<Team />}/>
+                        </Route>
                         <Route path='/contact' element={<Contact />}/>
                     </Routes>
                 </div>
