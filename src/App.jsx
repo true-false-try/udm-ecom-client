@@ -20,6 +20,7 @@ import Home from "./components/header/Home.jsx";
 import About from "./components/header/About.jsx";
 import Contact from "./components/header/Contact.jsx";
 import Team from "./components/header/Team.jsx";
+import NotFound from "./components/header/exceptions/NotFound.jsx";
 
 
 function App() {
@@ -67,6 +68,7 @@ function App() {
                             <Route path='/about/team' element={<Team />}/>
                         </Route>
                         <Route path='/contact' element={<Contact />}/>
+                        <Route path='*' element={<NotFound />} />
                     </Routes>
                 </div>
             </div>
