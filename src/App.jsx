@@ -21,6 +21,7 @@ import About from "./components/header/About.jsx";
 import Contact from "./components/header/Contact.jsx";
 import Team from "./components/header/Team.jsx";
 import NotFound from "./components/header/exceptions/NotFound.jsx";
+import CurrentLocation from "./components/header/CurrentLocation.jsx";
 
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
                             to="/contact">Contact</Link></li>
                     </ul>
                 </nav>
+                <CurrentLocation />
                 <div className='container mx-aouto py-8'>
                     <Routes>
                         <Route path='/' element={<Home />}/>
