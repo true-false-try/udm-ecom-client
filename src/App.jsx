@@ -22,6 +22,7 @@ import Contact from "./components/header/Contact.jsx";
 import Team from "./components/header/Team.jsx";
 import NotFound from "./components/header/exceptions/NotFound.jsx";
 import CurrentLocation from "./components/header/CurrentLocation.jsx";
+import Dashboard from "./components/header/Dashboard.jsx";
 
 
 function App() {
@@ -60,6 +61,9 @@ function App() {
                         <li><Link
                             className='text-white hover:text-yellow-300 font-medium transition duration-300'
                             to="/contact">Contact</Link></li>
+                        <li><Link
+                            className='text-white hover:text-yellow-300 font-medium transition duration-300'
+                            to="/contact">Contact</Link></li>
                     </ul>
                 </nav>
                 <CurrentLocation />
@@ -70,6 +74,7 @@ function App() {
                             <Route path='/about/team' element={<Team />}/>
                         </Route>
                         <Route path='/contact' element={<Contact />}/>
+                        <Route path='/dashboard' element={<Dashboard />}/>
                         <Route path='*' element={<NotFound />} />
                     </Routes>
                 </div>
