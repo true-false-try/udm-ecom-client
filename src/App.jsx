@@ -1,21 +1,6 @@
 import './App.css';
 import "./index.css";
 import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
-import ProfileCard from "./components/ProfileCard.jsx";
-import Sandbox from "./components/Sandbox.jsx";
-import ArrayIncrDecrButtons from "./components/ArrayIncrDecrButtons.jsx";
-import Forms from "./components/Forms.jsx";
-import ColorSwitcher from "./components/ColorSwitcher.jsx";
-import UseEffect from "./components/UseEffect.jsx";
-import ParentComponent from "./components/ParentComponent.jsx";
-import DigitalClock from "./components/DigitalClock.jsx";
-import UseRefHook from "./components/UseRefHook.jsx";
-import UseRefHookWithHtml from "./components/UseRefHookWithHtml.jsx";
-import PropDrilling from "./components/PropDrilling.jsx";
-import CustomHook from "./components/CustomHook.jsx";
-import GetJsonPlaceholderAPIs from "./components/GetJsonPlaceholderAPIs.jsx";
-import PostJsonPlaceholderAPIs from "./components/PostJsonPlaceholderAPIs.jsx";
-import Forms2 from "./components/Forms2.jsx";
 import Home from "./components/header/Home.jsx";
 import About from "./components/header/About.jsx";
 import Contact from "./components/header/Contact.jsx";
@@ -26,7 +11,7 @@ import Dashboard from "./components/header/Dashboard.jsx";
 
 
 function App() {
-    const hobby = ["Reading", "Cooking"];
+    /*const hobby = ["Reading", "Cooking"];
     const  handleHobbyClick = (hobby) => {
       alert(`You clicked on: ${hobby}`);
     };
@@ -45,7 +30,7 @@ function App() {
         isMember:false,
         hobbies:hobby,
         onHobbyClick:handleHobbyClick
-    }
+    }*/
 
     return (
         <Router>
