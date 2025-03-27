@@ -11,26 +11,6 @@ import Dashboard from "./components/header/Dashboard.jsx";
 
 
 function App() {
-    /*const hobby = ["Reading", "Cooking"];
-    const  handleHobbyClick = (hobby) => {
-      alert(`You clicked on: ${hobby}`);
-    };
-
-    const aliceProfile = {
-        name:"Alice",
-        age:23,
-        isMember:true,
-        hobbies:hobby,
-        onHobbyClick:handleHobbyClick
-    }
-
-    const johnProfile = {
-        name:"John",
-        age:34,
-        isMember:false,
-        hobbies:hobby,
-        onHobbyClick:handleHobbyClick
-    }*/
 
     return (
         <Router>
