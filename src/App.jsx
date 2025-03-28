@@ -9,6 +9,7 @@ import NotFound from "./components/header/exceptions/NotFound.jsx";
 import CurrentLocation from "./components/header/CurrentLocation.jsx";
 import Dashboard from "./components/header/Dashboard.jsx";
 import Counter from "./components/Counter.jsx";
+import Display from "./components/Display.jsx";
 
 
 function App() {
@@ -46,8 +47,11 @@ function App() {
                 </div>
             </div>
         </Router>*/
-
-        <Counter />
+        <div>
+            <h1>Welcome to the App</h1>
+            <Counter />
+            <Display />
+        </div>
     )
 }
 
