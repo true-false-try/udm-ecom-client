@@ -6,9 +6,8 @@ const counterReducer = (state = initialState, action) =>  {
         case 'DECREMENT':
             return {count: state.count - 1};
         default:
-            break;
-    };
-
+            return state;
+    }
 };
 
-export default  counterReducer();
+export default  counterReducer;

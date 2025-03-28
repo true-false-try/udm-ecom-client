@@ -8,12 +8,13 @@ import Team from "./components/header/Team.jsx";
 import NotFound from "./components/header/exceptions/NotFound.jsx";
 import CurrentLocation from "./components/header/CurrentLocation.jsx";
 import Dashboard from "./components/header/Dashboard.jsx";
+import Counter from "./components/Counter.jsx";
 
 
 function App() {
 
     return (
-        <Router>
+        /*<Router>
             <div className='min-h-screen bg-gray-100'>
                 <nav className='bg-blue-600 p-4'>
                     <ul className='flex justify-center space-x-6'>
@@ -28,7 +29,7 @@ function App() {
                             to="/contact">Contact</Link></li>
                         <li><Link
                             className='text-white hover:text-yellow-300 font-medium transition duration-300'
-                            to="/contact">Contact</Link></li>
+                            to="/co ntact">Contact</Link></li>
                     </ul>
                 </nav>
                 <CurrentLocation />
@@ -44,7 +45,9 @@ function App() {
                     </Routes>
                 </div>
             </div>
-        </Router>
+        </Router>*/
+
+        <Counter />
     )
 }
 
