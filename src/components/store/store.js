@@ -1,8 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from "./reducers/counterReducer.js";
+import {postReducer} from "./reducers/postReducer.js";
 
-const store = configureStore({
-    reducer: counterReducer,
+const initialState = {
+    post: {
+        post: [],
+        loading: false,
+        error: null,
+    }
+}
+
+export const store = configureStore({
+   reducer: {
+       post: postReducer,
+   },
+   preloadedState: initialState,
 });
-
-export default store;
