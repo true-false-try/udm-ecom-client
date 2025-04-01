@@ -1,12 +1,13 @@
 import './App.css';
 import "./index.css";
+import PostList from "./components/PostList.jsx";
 
 
 function App() {
 
     return (
         <div>
-            <h1>Welcome to the App</h1>
+            <PostList />
         </div>
     )
 }

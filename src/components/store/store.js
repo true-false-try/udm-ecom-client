@@ -2,8 +2,8 @@ import { configureStore } from '@reduxjs/toolkit';
 import {postReducer} from "./reducers/postReducer.js";
 
 const initialState = {
-    post: {
-        post: [],
+    posts: {
+        posts: [],
         loading: false,
         error: null,
     }
@@ -11,7 +11,7 @@ const initialState = {
 
 export const store = configureStore({
    reducer: {
-       post: postReducer,
+       posts: postReducer,
    },
    preloadedState: initialState,
 });
