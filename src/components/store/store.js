@@ -1,5 +1,6 @@
-import { configureStore } from '@reduxjs/toolkit';
+import {applyMiddleware, combineReducers, createStore} from '@reduxjs/toolkit';
 import {postReducer} from "./reducers/postReducer.js";
+import {thunk} from "redux-thunk";
 
 const initialState = {
     posts: {
@@ -9,9 +10,11 @@ const initialState = {
     }
 }
 
-export const store = configureStore({
-   reducer: {
-       posts: postReducer,
-   },
-   preloadedState: initialState,
+const rootReducer = combineReducers({
+   posts:postReducer,
 });
+
+export const store = createStore(
+    rootReducer,
+    applyMiddleware(thunk)
+)
