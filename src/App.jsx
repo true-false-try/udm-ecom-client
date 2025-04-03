@@ -1,13 +1,11 @@
 import './App.css';
 import "./index.css";
-import PostList from "./components/PostList.jsx";
-
 
 function App() {
 
     return (
-        <div>
-            <PostList />
+        <div className='flex items-center justify-center h-screen bg-gray-800 text-white text-2xl font-bold'>
+            Welcome
         </div>
     )
 }
