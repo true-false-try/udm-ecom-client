@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint udm-ecom-client",
-    "preview": "vite preview"
+    "tailwind": "tailwindcss -i ./src/index.css -o ./src/output.css --watch"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
