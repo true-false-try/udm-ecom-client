@@ -1,3 +1,7 @@
+import ProductCard from "./ProductCard.jsx";
+import { FaExclamationTriangle } from 'react-icons/fa';
+
+
 const Products = () => {
     const isLoading = false;
     const errorMessage = "";
@@ -28,11 +32,24 @@ const Products = () => {
           {isLoading ? (
               <p>It is loading...</p>
           ) : errorMessage ? (
-              <div></div>
+              <div className="flex justify-center items-center h-[200px]">
+                  <FaExclamationTriangle  className="text-state-800 text-3xl mr-2"/>
+                  <span className="text-state-800 text-lg font-medium">
+                      {errorMessage}
+                  </span>
+              </div>
           ) : (
-              <div></div>
+              <div className="min-h-[700px]">
+                <div className="pb-6 pt-14 grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-y-6 gap-x-6">
+                    {
+                        products &&
+                        products.map((item,i) => <ProductCard key={i} {...item} />)
+                    }
+                </div>
+              </div>
           )
           }
       </div>
     );
 }
+export default Products;

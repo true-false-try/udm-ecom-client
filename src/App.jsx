@@ -1,12 +1,11 @@
 import './App.css';
 import "./index.css";
+import Products from "./components/Products.jsx";
 
 function App() {
 
     return (
-        <div className='flex items-center justify-center h-screen bg-gray-800 text-white text-2xl font-bold'>
-            Welcome
-        </div>
+        <Products />
     )
 }
 
