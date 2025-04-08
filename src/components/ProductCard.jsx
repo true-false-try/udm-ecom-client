@@ -36,6 +36,21 @@ const ProductCard = ({
                 <div className="min-h-[80px] max-h-[80px] overflow-hidden">
                     <p className="text-gray-600 text-sm">{description}</p>
                 </div>
+                {specialPrice ? (
+                    <div className="flex flex-col">
+                    <span className="text-grey-400 line-through">
+                        ${Number(price).toFixed(2)}
+                    </span>
+                    <span className="text-xl font-bold text-slate-700 ">
+                        ${Number(specialPrice).toFixed(2)}
+                    </span>
+                    </div>
+                ) : (
+                    <span className="text-xl font-bold text-slate-700 ">
+                        ${Number(price).toFixed(2)}
+                    </span>
+                )
+                }
             </div>
         </div>
     );
