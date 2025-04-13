@@ -102,7 +102,12 @@ const ProductCard = ({
                     </button>
                 </div>
             </div>
-            <ProductViewModal />
+            <ProductViewModal
+                open={openProductViewModal}
+                setOpen={setOpenProductViewModal}
+                product={selectedViewProduct}
+                isAvailable={isAvailable}
+            />
         </div>
     );
 }
