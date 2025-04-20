@@ -1,3 +1,4 @@
+/*
 import ProductCard from "./ProductCard.jsx";
 import { FaExclamationTriangle } from 'react-icons/fa';
 import {useSelector} from "react-redux";
@@ -42,4 +43,4 @@ const Products = () => {
       </div>
     );
 }
-export default Products;
+export default Products;*/
