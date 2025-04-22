@@ -7,8 +7,10 @@ import {fetchProducts} from "../store/action/index.js";
 
 
 const Products = () => {
-    const isLoading = false;
-    const errorMessage = "Error Fetching";
+    const{ isLoading, errorMessage } = useSelector(
+        (state) => state.errors
+    );
+
     const {products} = useSelector(
         (state) => state.product
     );
