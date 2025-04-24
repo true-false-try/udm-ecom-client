@@ -1,4 +1,3 @@
-/*
 const initialState = {
     products: null,
     categories: null,
@@ -23,4 +22,4 @@ export const productReducer = (state = initialState, action) => {
         default:
             return state;
     }
-}*/
+}
