@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {FiArrowUp, FiRefreshCcw, FiRefreshCw, FiSearch} from "react-icons/fi";
 import {Button, FormControl, IconButton, InputLabel, Tooltip} from "@mui/material";
+import {useLocation, useNavigate, useSearchParams} from "react-router-dom";
 
 const Filter = () => {
     const categories = [
@@ -10,6 +11,10 @@ const Filter = () => {
         {categoryId: 4, categoryName: "Books"},
         {categoryId: 5, categoryName: "Toys"},
     ];
+
+   const [searchParams] =  useSearchParams();
+   const pathname = useLocation().pathname;
+   const navigate = useNavigate();
 
     const [category, setCategory] = useState("all");
 
