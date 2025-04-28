@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { FaShoppingCart } from "react-icons/fa";
+import {useState} from "react";
+import {FaShoppingCart} from "react-icons/fa";
 import ProductViewModal from "./ProductViewModal.jsx";
 
 const ProductCard = ({
@@ -13,34 +13,18 @@ const ProductCard = ({
                          specialPrice,
                      }) => {
     const [openProductViewModal, setOpenProductViewModal] = useState(false);
-    const [selectedViewProduct, setSelectedViewProduct] = useState(null);
     const btnLoader = false;
-
-    const isAvailable = quantity && Number(quantity) > 0;
+    const [selectedViewProduct, setSelectedViewProduct] = useState("");
+    const isAvailable =  quantity && Number(quantity) > 0;
 
     const handleProductView = (product) => {
         setSelectedViewProduct(product);
         setOpenProductViewModal(true);
-    };
-
-    const handleAddToCart = (e) => {
-        e.stopPropagation();
-        handleProductView({
-            id: productId,
-            productName,
-            image,
-            description,
-            quantity,
-            price,
-            discount,
-            specialPrice,
-        });
-    };
-
+    }
     return (
-        <div className="h-full flex flex-col border rounded-2xl shadow-md overflow-hidden transition hover:shadow-2xl duration-300 bg-white">
+        <div className="h-full flex flex-col border rounded-lg shadow-xl overflow-hidden transition-shadow duration-300">
             <div
-                onClick={() =>
+                onClick={() => {
                     handleProductView({
                         id: productId,
                         productName,
@@ -51,19 +35,18 @@ const ProductCard = ({
                         discount,
                         specialPrice,
                     })
-                }
-                className="w-full overflow-hidden aspect-[3/2] cursor-pointer"
+                }}
+                className="w-full overflow-hidden aspect-[3/2]"
             >
                 <img
+                    className="w-full h-full object-cover cursor-pointer transition-transform duration-300 transform hover:scale-105"
                     src={image}
                     alt={productName}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
             </div>
-
-            <div className="p-4 flex flex-col justify-between flex-grow">
+            <div className="p-4 flex-grow">
                 <h2
-                    onClick={() =>
+                    onClick={() => {
                         handleProductView({
                             id: productId,
                             productName,
@@ -74,56 +57,59 @@ const ProductCard = ({
                             discount,
                             specialPrice,
                         })
-                    }
-                    className="text-lg font-bold text-slate-800 mb-2 hover:text-blue-600 cursor-pointer transition"
+                    }}
+                    className="text-lg font-semibold mb-2 cursor-pointer"
                 >
                     {productName}
                 </h2>
-
-                <div className="text-gray-600 text-sm mb-4 min-h-[60px] line-clamp-3">
-                    {description}
+                <div className="min-h-[80px] max-h-[80px] overflow-hidden">
+                    <p className="text-gray-600 text-sm">{description}</p>
                 </div>
-
-                <div className="flex items-center justify-between mt-auto">
+                <div className="flex items-center justify-between">
                     {specialPrice ? (
                         <div className="flex flex-col">
-              <span className="text-gray-400 text-sm line-through">
-                ${Number(price).toFixed(2)}
-              </span>
-                            <span className="text-xl font-bold text-slate-800">
-                ${Number(specialPrice).toFixed(2)}
-              </span>
+                        <span className="text-grey-400 line-through">
+                            ${Number(price).toFixed(2)}
+                        </span>
+                            <span className="text-xl font-bold text-slate-700 ">
+                            ${Number(specialPrice).toFixed(2)}
+                        </span>
                         </div>
                     ) : (
-                        <span className="text-xl font-bold text-slate-800">
-              ${Number(price).toFixed(2)}
-            </span>
-                    )}
+                        <span className="text-xl font-bold text-slate-700 ">
+                            {" "}
+                            ${Number(price).toFixed(2)}
+                        </span>
+                    )
+                    }
                     <button
                         disabled={!isAvailable || btnLoader}
-                        onClick={handleAddToCart}
-                        className={`flex items-center gap-2 px-4 py-2 rounded-lg text-white transition ${
-                            isAvailable
-                                ? "bg-blue-600 hover:bg-blue-700"
-                                : "bg-gray-400 cursor-not-allowed"
-                        }`}
-                    >
-                        <FaShoppingCart />
-                        {isAvailable ? "Add to Cart" : "Out of Stock"}
-                    </button>
+                        onClick={() => {
+                            handleProductView({
+                                id: productId,
+                                productName,
+                                image,
+                                description,
+                                quantity,
+                                price,
+                                discount,
+                                specialPrice,
+                            })
+                        }}
+                        className={bg-blue-500 ${isAvailable} ? "opacity-100 hover:blue-600" : "opacity-70}>
+                            <FaShoppingCart className="mr-2"/>
+                        {isAvailable ? "Add to Cart" : "Stock Out"}
+                            </button>
+                            </div>
+                            </div>
+                            <ProductViewModal
+                            open={openProductViewModal}
+                        setOpen={setOpenProductViewModal}
+                        product={selectedViewProduct}
+                        isAvailable={isAvailable}
+                    />
                 </div>
-            </div>
-
-            {selectedViewProduct && (
-                <ProductViewModal
-                    open={openProductViewModal}
-                    setOpen={setOpenProductViewModal}
-                    product={selectedViewProduct}
-                    isAvailable={isAvailable}
-                />
-            )}
-        </div>
-    );
-};
+                );
+                }
 
 export default ProductCard;
