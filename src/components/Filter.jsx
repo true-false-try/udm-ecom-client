@@ -13,10 +13,23 @@ const Filter = () => {
     ];
 
     const [searchParams] =  useSearchParams();
+    const params = URLSearchParams(searchParams);
     const pathname = useLocation().pathname;
     const navigate = useNavigate();
 
     const [category, setCategory] = useState("all");
+    const [sortOrder, setSortOder] = useState("asc");
+    const [searchTerm, setSearchTerm] = useState("");
+
+    useEffect(() => {
+        const currentCategory = searchParams.get("category") || "all";
+        const currentSortOrder = searchParams.get("sortby") || "asc";
+        const currentSearchTerm = searchParams.get("keyword") || "";
+
+        setCategory(currentCategory);
+        setSortOder(currentSortOrder);
+        setSearchTerm(currentSearchTerm);
+    }, [searchParams]);
 
     const handleCategoryChange = (event) => {
         setCategory(event.target.value);
