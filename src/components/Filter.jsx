@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {FiArrowDown, FiArrowUp, FiRefreshCcw, FiRefreshCw, FiSearch} from "react-icons/fi";
-import {Button, FormControl, IconButton, InputLabel, selectClasses, Tooltip} from "@mui/material";
+import {Button, FormControl, IconButton, InputLabel, MenuItem, Select, Tooltip} from "@mui/material";
 import {useLocation, useNavigate, useSearchParams} from "react-router-dom";
 
 const Filter = () => {
@@ -93,7 +93,7 @@ const Filter = () => {
                 </FormControl>
                 {/*SORT BUTTON & CLEAR FILTER*/}
                 <Tooltip title="Sorted by price: asc">
-                    <Button onClick={toggleSortOrder} variant="contained" color="primary" classname="flex items-center gap-2 h-10">
+                    <Button onClick={toggleSortOrder} variant="contained" color="primary" className="flex items-center gap-2 h-10">
                         Sort by
                         {sortOrder === "asc"} ? (
                             <FiArrowUp size={20} />
