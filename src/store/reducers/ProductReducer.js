@@ -1,8 +1,10 @@
 const initialState = {
-    products: null,
+    products: [],
     categories: null,
-    pagination: {}
-}
+    pagination: {},
+    isLoading: false,
+    errorMessage: null,
+};
 
 export const productReducer = (state = initialState, action) => {
     switch (action.type) {

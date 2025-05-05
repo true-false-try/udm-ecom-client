@@ -96,7 +96,10 @@ const ProductCard = ({
                                 specialPrice,
                             })
                         }}
-                        className={bg-blue-500 ${isAvailable} ? "opacity-100 hover:blue-600" : "opacity-70}>
+                        className={`bg-blue-500 text-white px-4 py-2 rounded flex items-center transition ${
+                            isAvailable ? "opacity-100 hover:bg-blue-600" : "opacity-70 cursor-not-allowed"
+                        }`}
+                        >
                             <FaShoppingCart className="mr-2"/>
                         {isAvailable ? "Add to Cart" : "Stock Out"}
                             </button>
