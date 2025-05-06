@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {fetchProducts} from "../store/action/index.js";
 import Filter from "./Filter.jsx";
+import UseProductFilter from "./UseProductFilter.jsx";
 
 
 const Products = () => {
@@ -15,10 +16,11 @@ const Products = () => {
     const { products = [] } = useSelector((state) => state.product || {});
 
     const dispatch = useDispatch();
+    UseProductFilter();
+
     useEffect(() => {
             dispatch(fetchProducts())
         },[dispatch]);
-
 
     return(
       <div className="lg:px-14 sm:px-8 px-4 py-14 2xl:w-[90%] 2xl:mx-auto">
