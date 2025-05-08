@@ -13,7 +13,7 @@ const Products = () => {
         (state) => state.errors
     );
 
-    const { products = [] } = useSelector((state) => state.product || {});
+    const { products, categories } = useSelector((state) => state.product || {});
 
     const dispatch = useDispatch();
     UseProductFilter();
@@ -24,7 +24,7 @@ const Products = () => {
 
     return(
       <div className="lg:px-14 sm:px-8 px-4 py-14 2xl:w-[90%] 2xl:mx-auto">
-          <Filter />
+          <Filter categories={categories ? categories : []}/>
           {isLoading ? (
               <p>It is loading...</p>
           ) : errorMessage ? (
