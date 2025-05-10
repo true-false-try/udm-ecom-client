@@ -20,7 +20,6 @@ function ProductViewModal({ open, setOpen, product, isAvailable }) {
                 <DialogPanel
                     className="relative transform overflow-hidden rounded-2xl bg-white shadow-xl transition-all md:w-[620px] w-full max-w-2xl"
                 >
-                    {/* Изображение */}
                     {image && (
                         <div className="flex justify-center aspect-[3/2] overflow-hidden">
                             <img
@@ -46,7 +45,6 @@ function ProductViewModal({ open, setOpen, product, isAvailable }) {
                             </button>
                         </div>
 
-                        {/* Статус */}
                         <div className="my-2">
                             {isAvailable ? (
                                 <Status
@@ -67,10 +65,8 @@ function ProductViewModal({ open, setOpen, product, isAvailable }) {
 
                         <Divider className="my-4" />
 
-                        {/* Описание */}
                         <p className="text-gray-600 text-sm leading-relaxed mb-4">{description}</p>
 
-                        {/* Цена */}
                         <div className="mb-4">
                             {specialPrice ? (
                                 <div className="text-xl font-bold text-slate-900">
@@ -86,7 +82,6 @@ function ProductViewModal({ open, setOpen, product, isAvailable }) {
                             )}
                         </div>
 
-                        {/* Кнопка закрытия */}
                         <div className="flex justify-end">
                             <button
                                 onClick={() => setOpen(false)}
