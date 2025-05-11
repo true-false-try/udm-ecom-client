@@ -35,7 +35,16 @@ const Filter = () => {
         }
     }, [searchParams, searchTerm, navigate, pathname])
 
-
+    const handleCategoryChange = (event) => {
+        const selectedCategory = event.target.value;
+        if(selectedCategory === 'all'){
+            params.delete("category");
+        } else {
+            params.set("category", selectedCategory)
+        }
+        navigate(`${pathname}?${params}`)
+        setCategory(event.target.value);
+    };
 
     const toggleSortOrder = () => {
         setSortOrder((prevOrder) =>  {
