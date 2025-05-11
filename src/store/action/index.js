@@ -1,11 +1,11 @@
 import api from "../../api/api.js";
 
-export const fetchProducts = (queryString) => async(dispatch) => {
+export const fetchCategories = (queryString) => async(dispatch) => {
     try {
-        dispatch({type:"IS_FETCHING"});
+        dispatch({type:"CATEGORY_LOADER"});
          const {data} = await api.get(`/public/products?${queryString}`);
          dispatch({
-             type: "FETCH_PRODUCTS",
+             type: "FETCH_CATEGORIES",
              payload: data.content,
              pageNumber: data.pageNumber,
              pageSize: data.pageSize,
@@ -13,7 +13,7 @@ export const fetchProducts = (queryString) => async(dispatch) => {
              totalPages: data.totalPages,
              lastPage: data.lastPage,
          });
-         dispatch({type:"IS_SUCCESS"});
+         dispatch({type:"IS_ERROR"});
     } catch (error) {
         console.log(error);
         dispatch({
