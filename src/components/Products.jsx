@@ -7,6 +7,7 @@ import Filter from "./Filter.jsx";
 import UseProductFilter from "./UseProductFilter.jsx";
 import {fetchCategories} from "../store/action/index.js";
 import Loader from "./Loader.jsx";
+import Pagination from "./Pagination.jsx";
 
 
 const Products = () => {
@@ -43,6 +44,9 @@ const Products = () => {
                         products.map((item,i) => <ProductCard key={i} {...item} />)
                     }
                 </div>
+                  <div className='flex justify-center pt-10'>
+                      <Pagination />
+                  </div>
               </div>
           )
           }
