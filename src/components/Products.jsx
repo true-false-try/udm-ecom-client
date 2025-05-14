@@ -15,7 +15,7 @@ const Products = () => {
         (state) => state.errors
     );
 
-    const { products, categories } = useSelector((state) => state.product || {});
+    const { products, categories, pagination} = useSelector((state) => state.product || {});
 
     const dispatch = useDispatch();
     UseProductFilter();
@@ -45,7 +45,10 @@ const Products = () => {
                     }
                 </div>
                   <div className='flex justify-center pt-10'>
-                      <Pagination />
+                      <Pagination
+                          numberOfPage = {pagination?.totalPages}
+                          totalProducts = {pagination?.totalElements}
+                      />
                   </div>
               </div>
           )
