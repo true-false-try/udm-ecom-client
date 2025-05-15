@@ -63,7 +63,7 @@ const ProductCard = ({
                     {productName}
                 </h2>
                 <div className="min-h-[80px] max-h-[80px] overflow-hidden">
-                    <p className="text-gray-600 text-sm">{description}</p>
+                    <p className="text-gray-600 text-sm">{truncateText(description, 80)}</p>
                 </div>
                 <div className="flex items-center justify-between">
                     {specialPrice ? (
