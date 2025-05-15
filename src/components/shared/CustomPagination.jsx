@@ -1,7 +1,7 @@
 import {Pagination} from "@mui/material";
 import {useLocation, useNavigate, useSearchParams} from "react-router-dom";
 
-const Pagination = ({numberOfPage, totalProducts}) => {
+const CustomPagination = ({numberOfPage, totalProducts}) => {
     const PAGE = "page";
 
     const [searchParams] = useSearchParams()
@@ -18,7 +18,7 @@ const Pagination = ({numberOfPage, totalProducts}) => {
     return (
         <Pagination count={numberOfPage}
                     page={currentPage}
-                    defaultpage={1}
+                    defaultPage={1}
                     siblingCount={0}
                     boundaryCount={2}
                     shape="rounded"
@@ -27,4 +27,4 @@ const Pagination = ({numberOfPage, totalProducts}) => {
     )
 }
 
-export default Pagination;
+export default CustomPagination;

@@ -3,7 +3,7 @@ import {useDispatch} from "react-redux";
 import {useEffect} from "react";
 import {fetchCategories} from "../store/action/index.js";
 
-const UseProductFilter = () => {
+const useProductFilter = () => {
     const PAGE = "page";
     const SORT_BY = "sortby";
     const ASC = "asc";
@@ -46,4 +46,4 @@ const UseProductFilter = () => {
     }, [dispatch(), searchParams])
 };
 
-export default UseProductFilter;
+export default useProductFilter;
