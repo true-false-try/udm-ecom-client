@@ -11,6 +11,7 @@ const ProductCard = ({
                          price,
                          discount,
                          specialPrice,
+                         about,
                      }) => {
     const [openProductViewModal, setOpenProductViewModal] = useState(false);
     const btnLoader = false;
@@ -18,8 +19,10 @@ const ProductCard = ({
     const isAvailable =  quantity && Number(quantity) > 0;
 
     const handleProductView = (product) => {
-        setSelectedViewProduct(product);
-        setOpenProductViewModal(true);
+        if (!about) {
+            setSelectedViewProduct(product);
+            setOpenProductViewModal(true);
+        }
     }
     return (
         <div className="h-full flex flex-col border rounded-lg shadow-xl overflow-hidden transition-shadow duration-300">
@@ -34,6 +37,7 @@ const ProductCard = ({
                         price,
                         discount,
                         specialPrice,
+                        about,
                     })
                 }}
                 className="w-full overflow-hidden aspect-[3/2]"
@@ -56,6 +60,7 @@ const ProductCard = ({
                             price,
                             discount,
                             specialPrice,
+                            about,
                         })
                     }}
                     className="text-lg font-semibold mb-2 cursor-pointer"
@@ -65,53 +70,55 @@ const ProductCard = ({
                 <div className="min-h-[80px] max-h-[80px] overflow-hidden">
                     <p className="text-gray-600 text-sm">{truncateText(description, 80)}</p>
                 </div>
-                <div className="flex items-center justify-between">
-                    {specialPrice ? (
-                        <div className="flex flex-col">
+                {!about && (
+                    <div className="flex items-center justify-between">
+                        {specialPrice ? (
+                            <div className="flex flex-col">
                         <span className="text-grey-400 line-through">
                             ${Number(price).toFixed(2)}
                         </span>
-                            <span className="text-xl font-bold text-slate-700 ">
+                                <span className="text-xl font-bold text-slate-700 ">
                             ${Number(specialPrice).toFixed(2)}
                         </span>
-                        </div>
-                    ) : (
-                        <span className="text-xl font-bold text-slate-700 ">
+                            </div>
+                        ) : (
+                            <span className="text-xl font-bold text-slate-700 ">
                             {" "}
-                            ${Number(price).toFixed(2)}
+                                ${Number(price).toFixed(2)}
                         </span>
-                    )
-                    }
-                    <button
-                        disabled={!isAvailable || btnLoader}
-                        onClick={() => {
-                            handleProductView({
-                                id: productId,
-                                productName,
-                                image,
-                                description,
-                                quantity,
-                                price,
-                                discount,
-                                specialPrice,
-                            })
-                        }}
-                        className={`bg-blue-500 text-white px-4 py-2 rounded flex items-center transition ${
-                            isAvailable ? "opacity-100 hover:bg-blue-600" : "opacity-70 cursor-not-allowed"
-                        }`}
+                        )
+                        }
+                        <button
+                            disabled={!isAvailable || btnLoader}
+                            onClick={() => {
+                                handleProductView({
+                                    id: productId,
+                                    productName,
+                                    image,
+                                    description,
+                                    quantity,
+                                    price,
+                                    discount,
+                                    specialPrice,
+                                    about
+                                })
+                            }}
+                            className={`bg-blue-500 text-white px-4 py-2 rounded flex items-center transition ${
+                                isAvailable ? "opacity-100 hover:bg-blue-600" : "opacity-70 cursor-not-allowed"
+                            }`}
                         >
                             <FaShoppingCart className="mr-2"/>
-                        {isAvailable ? "Add to Cart" : "Stock Out"}
-                            </button>
-                            </div>
-                            </div>
-                            <ProductViewModal
+                            {isAvailable ? "Add to Cart" : "Stock Out"}
+                        </button>
+                    </div>
+                )};
+                    </div>
+                        <ProductViewModal
                             open={openProductViewModal}
-                        setOpen={setOpenProductViewModal}
-                        product={selectedViewProduct}
-                        isAvailable={isAvailable}
-                    />
-                </div>
+                            setOpen={setOpenProductViewModal}
+                            product={selectedViewProduct}
+                            isAvailable={isAvailable} />
+                    </div>
                 );
                 }
 
