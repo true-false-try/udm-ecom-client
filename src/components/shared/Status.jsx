@@ -9,25 +9,14 @@ const Status = ({
                     color = "text-gray-800",
                     animate = true,
                 }) => {
-    const IconElement = (
-        <MuiIcon fontSize="small">{icon}</MuiIcon>
-    );
-
     const Content = (
-        <div
-            className={`
-                ${bg} ${color} 
-                px-3 py-2 
-                rounded-lg 
-                font-semibold 
-                flex items-center gap-2 
-                shadow-sm
-            `}
-        >
+        <div className="bg-color px-3 py-2 rounded-lg font-semibold flex items-center gap-2 shadow-sm">
             {tooltip ? (
-                <Tooltip title={tooltip}>{IconElement}</Tooltip>
+                <Tooltip title={tooltip}>
+                    <MuiIcon fontSize="small">{icon}</MuiIcon>
+                </Tooltip>
             ) : (
-                IconElement
+                <MuiIcon fontSize="small">{icon}</MuiIcon>
             )}
             <span>{text}</span>
         </div>
