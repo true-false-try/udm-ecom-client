@@ -1,6 +1,9 @@
 import {useState} from "react";
 import {FaShoppingCart} from "react-icons/fa";
 import ProductViewModal from "./ProductViewModal.jsx";
+import {useDispatch} from "react-redux";
+import {addToCart} from "../../store/action/index.js";
+import toast from "react-hot-toast"
 
 const ProductCard = ({
                          productId,
@@ -17,6 +20,7 @@ const ProductCard = ({
     const btnLoader = false;
     const [selectedViewProduct, setSelectedViewProduct] = useState("");
     const isAvailable =  quantity && Number(quantity) > 0;
+    const dispatch = useDispatch();
 
     const handleProductView = (product) => {
         if (!about) {
@@ -24,6 +28,12 @@ const ProductCard = ({
             setOpenProductViewModal(true);
         }
     }
+
+    const addTwoCardHandler = (cartItems) => {
+        dispatch(addToCart(cartItems, 1, toast));
+    }
+
+
     return (
         <div className="h-full flex flex-col border rounded-lg shadow-xl overflow-hidden transition-shadow duration-300">
             <div
