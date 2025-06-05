@@ -25,30 +25,6 @@ const Cart = () => {
                 <div className="md:col-span-2 justify-self-start text-lg text-slate-800 lg-ps-4">
                     Total
                 </div>
-                <div className="border-t-[1.5px] border-slate-200 py-4 sm:flex sm:flex-row sm:px-0 px-2 flex-col sm:justify-between">
-                    <div></div>
-                    <div className="flex text-sm gap-l flex-col">
-                        <div className="flex justify-between w-full md:text-lg text-sm font-semibold">
-                            <span>Subtotal</span>
-                            <span>$300</span>
-                        </div>
-                    </div>
-                    <p className="text-slate-500">
-                        Taxes and shipping calculated at checkout
-                    </p>
-                    <Link className="w-full flex justify-end" to="/checkout">
-                        <button
-                            onClick={() => {}}
-                            className="font-semibold w-[300px] py-2 px-4 rounded-sm text-white flex items-center justify-center gap-2 hover:text-gray-300 transition duration-500">
-                            <MdShoppingCart size={20} />
-                            Checkout
-                        </button>
-                    </Link>
-                    <Link className="flex gap-2 items-center mt-2 text-slate-500" to="/checkout">
-                        <MdArrowBack />
-                        <span>Continue Shopping</span>
-                    </Link>
-                </div>
             </div>
         </div>
     )
