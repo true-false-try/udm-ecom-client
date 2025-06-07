@@ -1,5 +1,9 @@
 import {useState} from "react";
 
+function HitOtlineTrash(props: { size: number, className: string }) {
+    return null;
+}
+
 const ItemContent = ({
     productId,
     productName,
@@ -31,6 +35,7 @@ const ItemContent = ({
                     <button
                         onClick={() => {}}
                         className="flex items-center font-semibold space-x-2 px-2 text-xs border-rose-600 text-rose-600 round-md hover:bg-red-50 transition-colors duration-200">
+                        <HitOtlineTrash  size={16} className="text-rose-600"/>
                         Remove
                     </button>
                 </div>
