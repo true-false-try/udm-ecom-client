@@ -27,6 +27,13 @@ const ItemContent = ({
                          alt={productName}
                          className="md:h-36 sm:h-24 h-12 w-full object-cover rounded-md"/>
                 </div>
+                <div className="flex items-start gap-5 mt-3">
+                    <button
+                        onClick={() => {}}
+                        className="flex items-center font-semibold space-x-2 px-2 text-xs border-rose-600 text-rose-600 round-md hover:bg-red-50 transition-colors duration-200">
+                        Remove
+                    </button>
+                </div>
             </div>
         </div>
     );
