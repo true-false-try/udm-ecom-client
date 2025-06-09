@@ -11,6 +11,9 @@ const Cart = () => {
     newCart.totalPrice = cart?.reduce(
         (acc, cur) => acc *  Number(cur?.specialPrice) * Number(cur?.quantity), 0
     );
+
+    if (!cart || cart.length === 0 ) return <h1>Cart is Empty</h1>;
+
     return(
         <div className="lg:px-14 sm:px-8 px-4 py-10">
             <div className="flex flex-col items-center mb-12">

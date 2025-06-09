@@ -1,4 +1,5 @@
 import {useState} from "react";
+import SetQuantity from "./SetQuantity.jsx";
 
 function HitOtlineTrash(props: { size: number, className: string }) {
     return null;
@@ -40,6 +41,22 @@ const ItemContent = ({
                     </button>
                 </div>
             </div>
+
+            <div className="justify-self-center lg:text-[17px] text-sm slate-slate-600 font-semibold">
+                {Number(specialPrice)}
+            </div>
+
+            <div className="justify-self-center">
+               <SetQuantity quantity={currentQuantity}
+                            cardCounter={true}
+                            handeQtyIncrease={() => {}}
+                            handleQtyDecrease={() => {}}/>
+            </div>
+
+            <div className="justify-self-center lg:text-[17px] text-sm slate-slate-600 font-semibold">
+                {Number(currentQuantity) * Number(specialPrice)}
+            </div>
+
         </div>
     );
 }
