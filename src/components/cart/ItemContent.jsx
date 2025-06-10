@@ -1,5 +1,8 @@
 import {useState} from "react";
 import SetQuantity from "./SetQuantity.jsx";
+import {useDispatch} from "react-redux";
+import {increaseCartQuantity} from "../../store/action/index.js";
+import toast from "react-hot-toast";
 
 function HitOtlineTrash(props: { size: number, className: string }) {
     return null;
@@ -18,7 +21,16 @@ const ItemContent = ({
                      }) =>  {
 
     const [currentQuantity, setCurrentQuantity] = useState(quantity);
+    const dispatch = useDispatch();
 
+    const  handleQuantityIncrease = (cartItems) => {
+      dispatch(increaseCartQuantity(
+          cartItems,
+          toast,
+          currentQuantity,
+          setCurrentQuantity
+      ));
+    };
     return (
         <div className="grid md:grid-cols-5grid-cols-4 md:text-md text-sm gap-4 items-center border-[1px] border-slate-200">
             <div className="md:col-span-2 justify-self-start flex flex-col gap-2">
@@ -49,7 +61,14 @@ const ItemContent = ({
             <div className="justify-self-center">
                <SetQuantity quantity={currentQuantity}
                             cardCounter={true}
-                            handeQtyIncrease={() => {}}
+                            handeQtyIncrease={() => handleQuantityIncrease(
+                                image,
+                                productName,
+                                description,
+                                specialPrice,
+                                price,
+                                quantity
+                            )}
                             handleQtyDecrease={() => {}}/>
             </div>
 

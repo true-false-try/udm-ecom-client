@@ -1,5 +1,6 @@
 import api from "../../api/api.js";
 import toast from "react-hot-toast"
+import {dispatch} from "react-hot-toast/src/core/store.js";
 
 
 export const fetchCategories = (queryString) => async(dispatch) => {
@@ -46,3 +47,26 @@ export const addToCart = (data, qty = 1, toast) =>
             toast.error("Out of stock")
         }
     };
+
+export const increaseCartQuantity =
+    (data, toast, currentQuantity, setCurrentQuantity) =>
+        (dispatch, getState) => {
+            const {products} = getState().products;
+            const getProduct = products.find(
+                (item) => item.id === data.id
+            );
+
+            const isQuantityExist =  getProduct.quantity >= currentQuantity + 1;
+
+            if (isQuantityExist) {
+                const newQuantity = currentQuantity + 1;
+                setCurrentQuantity(newQuantity);
+
+                dispatch({
+                    type: "ADD_CART",
+                    payload: {...data, quantity: newQuantity + 1},
+                })
+            } else {
+                toast.error("Quantity Reached to Limit");
+            }
+};
