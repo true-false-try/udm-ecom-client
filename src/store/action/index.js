@@ -66,6 +66,9 @@ export const increaseCartQuantity =
                     type: "ADD_CART",
                     payload: {...data, quantity: newQuantity + 1},
                 })
+
+                localStorage.setItem("cartItems", JSON.stringify(getState().carts.cart));
+
             } else {
                 toast.error("Quantity Reached to Limit");
             }

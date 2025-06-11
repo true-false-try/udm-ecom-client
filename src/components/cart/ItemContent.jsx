@@ -61,14 +61,14 @@ const ItemContent = ({
             <div className="justify-self-center">
                <SetQuantity quantity={currentQuantity}
                             cardCounter={true}
-                            handeQtyIncrease={() => handleQuantityIncrease(
-                                image,
-                                productName,
-                                description,
-                                specialPrice,
-                                price,
-                                quantity
-                            )}
+                            handeQtyIncrease={() => handleQuantityIncrease({
+                                    image,
+                                    productName,
+                                    description,
+                                    specialPrice,
+                                    price,
+                                    quantity
+                            })}
                             handleQtyDecrease={() => {}}/>
             </div>
 
