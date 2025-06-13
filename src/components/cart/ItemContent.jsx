@@ -1,7 +1,7 @@
 import {useState} from "react";
 import SetQuantity from "./SetQuantity.jsx";
 import {useDispatch} from "react-redux";
-import {decreaseCartQuantity, increaseCartQuantity} from "../../store/action/index.js";
+import {decreaseCartQuantity, increaseCartQuantity, removeFromCart} from "../../store/action/index.js";
 import toast from "react-hot-toast";
 
 function HitOtlineTrash(props: { size: number, className: string }) {
@@ -40,6 +40,10 @@ const ItemContent = ({
         }
     }
 
+    const removeItemFromCart = (cartItems) => {
+        dispatch(removeFromCart(cartItems, toast))
+    }
+
     return (
         <div className="grid md:grid-cols-5grid-cols-4 md:text-md text-sm gap-4 items-center border-[1px] border-slate-200">
             <div className="md:col-span-2 justify-self-start flex flex-col gap-2">
@@ -55,7 +59,14 @@ const ItemContent = ({
                 </div>
                 <div className="flex items-start gap-5 mt-3">
                     <button
-                        onClick={() => {}}
+                        onClick={() => {removeItemFromCart({
+                            image,
+                            productName,
+                            description,
+                            specialPrice,
+                            price,
+                            quantity
+                        })}}
                         className="flex items-center font-semibold space-x-2 px-2 text-xs border-rose-600 text-rose-600 round-md hover:bg-red-50 transition-colors duration-200">
                         <HitOtlineTrash  size={16} className="text-rose-600"/>
                         Remove
