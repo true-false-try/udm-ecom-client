@@ -4,10 +4,12 @@ import {Badge} from "@mui/material";
 import {useState} from "react";
 import {RxCross2} from "react-icons/rx";
 import {IoIosMenu} from "react-icons/io";
+import {useSelector} from "react-redux";
 
 const Navbar = () => {
     const path =  useLocation().pathname
     const [navbarOpen, setNavbarOpen] = useState(false);
+    const {cart} = useSelector((state) => state.carts);
     return (
         <div className="h-[70px] bg-custom-gradient text-white z-50 flex items-center top-0">
             <div className="lg:px-14 sm:px-8 px-4 w-full flex items-center justify-between">
@@ -62,7 +64,7 @@ const Navbar = () => {
                               to={"/cart"}>
                             <Badge
                             showZero={true}
-                            badgeContent={0}
+                            badgeContent={cart?.length || 0}
                             color="primary"
                             overlap="circular"
                             anchorOrigin={{ vertical: "top", horizontal: "right" }}>

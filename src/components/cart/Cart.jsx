@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import ItemContent from "./ItemContent.jsx";
 import CartEmpty from "./CartEmpty.jsx";
+import {formatPrice} from "../../utils/formatPrice.js";
 
 const Cart = () => {
     const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const Cart = () => {
     const newCart = {...cart};
 
     newCart.totalPrice = cart?.reduce(
-        (acc, cur) => acc *  Number(cur?.specialPrice) * Number(cur?.quantity), 0
+        (acc, cur) => acc + Number(cur?.specialPrice) * Number(cur?.quantity), 0
     );
 
     if (!cart || cart.length === 0 ) return <CartEmpty />;
@@ -49,7 +50,7 @@ const Cart = () => {
                     <div className="flex text-sm gap-l flex-col">
                         <div className="flex justify-between w-full md:text-lg text-sm font-semibold">
                             <span>Subtotal</span>
-                            <span>$300</span>
+                            <span>{formatPrice(newCart?.totalPrice)}</span>
                         </div>
                     </div>
                     <p className="text-slate-500">
