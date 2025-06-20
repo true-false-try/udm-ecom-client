@@ -64,10 +64,7 @@ const Cart = () => {
                             Checkout
                         </button>
                     </Link>
-                    <Link className="flex gap-2 items-center mt-2 text-slate-500" to="/checkout">
-                        <MdArrowBack />
-                        <span>Continue Shopping</span>
-                    </Link>
+
                 </div>
             </div>
         </div>
