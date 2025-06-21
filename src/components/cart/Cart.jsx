@@ -64,7 +64,7 @@ const Cart = () => {
                             Checkout
                         </button>
                     </Link>
-
+                    
                 </div>
             </div>
         </div>
