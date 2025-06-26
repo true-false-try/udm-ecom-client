@@ -10,6 +10,8 @@ const Navbar = () => {
     const path =  useLocation().pathname
     const [navbarOpen, setNavbarOpen] = useState(false);
     const {cart} = useSelector((state) => state.carts);
+    const {user} = useSelector((state) => state.auth);
+
     return (
         <div className="h-[70px] bg-custom-gradient text-white z-50 flex items-center top-0">
             <div className="lg:px-14 sm:px-8 px-4 w-full flex items-center justify-between">
@@ -57,21 +59,29 @@ const Navbar = () => {
                         </Link>
                     </li>
 
-                    <li className="font-[500] transition-all duration-150">
-                        <Link className={`${
-                            path === "/cart" ? "text-white font-semibold" : "text-grey-200"
-                        }`}
-                              to={"/cart"}>
-                            <Badge
-                            showZero={true}
-                            badgeContent={cart?.length || 0}
-                            color="primary"
-                            overlap="circular"
-                            anchorOrigin={{ vertical: "top", horizontal: "right" }}>
-                                <FaShoppingCart size={25}/>
-                            </Badge>
-                        </Link>
-                    </li>
+                    {(user && user.id) ? (
+                            <li className="font-[500] transition-all duration-150">
+                                <p>
+                                    Welcome
+                                </p>
+                            </li>
+                        ) : (
+                        <li className="font-[500] transition-all duration-150">
+                            <Link className={`${
+                                path === "/cart" ? "text-white font-semibold" : "text-grey-200"
+                            }`}
+                                  to={"/cart"}>
+                                <Badge
+                                    showZero={true}
+                                    badgeContent={cart?.length || 0}
+                                    color="primary"
+                                    overlap="circular"
+                                    anchorOrigin={{ vertical: "top", horizontal: "right" }}>
+                                    <FaShoppingCart size={25}/>
+                                </Badge>
+                            </Link>
+                        </li>
+                        )};
 
                     <li className="font-[500] transition-all duration-150">
                         <Link className="flex items-center space-x-2 px-4 py-[6px] bg-greadient-to-r ease-in-out transform"

@@ -3,7 +3,7 @@ import "./index.css";
 import Products from "./components/products/Products.jsx";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from "./components/home/Home.jsx";
-import Navbar from "./components/shared/Nvbar.jsx";
+import Navbar from "./components/shared/Navbar.jsx";
 import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
 import {Toaster} from "react-hot-toast";
