@@ -5,6 +5,7 @@ import {useState} from "react";
 import {RxCross2} from "react-icons/rx";
 import {IoIosMenu} from "react-icons/io";
 import {useSelector} from "react-redux";
+import UserMenu from "../UserMenu.jsx";
 
 const Navbar = () => {
     const path =  useLocation().pathname
@@ -62,7 +63,7 @@ const Navbar = () => {
                     {(user && user.id) ? (
                             <li className="font-[500] transition-all duration-150">
                                 <p>
-                                    Welcome
+                                    <UserMenu />
                                 </p>
                             </li>
                         ) : (
