@@ -35,7 +35,17 @@ export const addToCart = (data, qty = 1, toast) =>
             (item) => item.id === data.id
         );
 
+        //Check for stocks
+        const isQuantityExist = getProduct.quantity >= qty;
 
+        //If in stock -> add
+        if(isQuantityExist){
+            dispatch({ type:"ADD_CART", payload: {...data, quantity: qty} });
+            toast.success(`${data?.productName} added to cart`)
+            localStorage.setItem("cart", JSON.stringify(getState().carts.cart));
+        } else {
+            toast.error("Out of stock")
+        }
     };
 
 export const increaseCartQuantity =
