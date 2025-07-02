@@ -9,6 +9,7 @@ import Contact from "./components/Contact.jsx";
 import {Toaster} from "react-hot-toast";
 import React, {useState} from "react";
 import Cart from "./components/cart/Cart.jsx";
+import PrivateRoute from "./components/PrivateRoute.jsx";
 
 function App() {
 
@@ -22,7 +23,9 @@ function App() {
                     <Route path="/about" element={ <About />} />
                     <Route path="/contact" element={ <Contact />} />
                     <Route path="/cart" element={ <Cart />} />
-                    <Route path="/login" element={ <Log In />} />
+                    <Route path='/' element={<PrivateRoute publicPage />}>
+                        <Route path="/login" element={ <LogIn />} />
+                    </Route>
                 </Routes>
             </Router>
             <Toaster position='bottom-center' />
