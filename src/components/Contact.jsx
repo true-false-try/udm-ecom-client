@@ -13,44 +13,7 @@ const Contact = () => {
                 <p className="text-gray-600 text-center mb4 ">
                     We would love to hear from you! Please fill out the form below or contact us directly.
                 </p>
-                <form className="space-y-4">
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700">
-                            name
-                        </label>
-                        <input
-                            type="text"
-                            required={true}
-                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700"
-                        />
-                    </div>
 
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700">
-                            email
-                        </label>
-                        <input
-                            type="text"
-                            required={true}
-                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700"
-                        />
-                    </div>
-
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700">
-                            message
-                        </label>
-                        <textarea
-                            rows="4"
-                            required={true}
-                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700"
-                        />
-                    </div>
-
-                    <button className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300">
-                        Send Message!
-                    </button>
-                </form>
 
                 <div className="mt-8 text-center">
                     <h2 className="text-lg font-semibold">Contact Information</h2>
