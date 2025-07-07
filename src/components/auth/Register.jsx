@@ -1,13 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {AiOutlineLogin} from "react-icons/ai";
 import InputField from "../shared/InputField.jsx";
-import {Link} from "react-router-dom";
-import {autheenticateSignInUser} from "../../store/action/index.js";
+import {Link, useNavigate} from "react-router-dom";
+import {autheenticateSignInUser, registerNewUser} from "../../store/action/index.js";
 import {FaUserPlus} from "react-icons/fa";
+import {useDispatch} from "react-redux";
+import toast from "react-hot-toast";
 
 const Register = () => {
+    const reset = {}
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [loader, setLoader] = useState(false);
     const registerHandler = async (date) => {
         console.log("Register Click");
+        dispatch(registerNewUser(date, toast, reset, navigate, setLoader))
     }
 
     return (

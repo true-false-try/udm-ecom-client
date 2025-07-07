@@ -1,5 +1,4 @@
 import api from "../../api/api.js";
-import toast from "react-hot-toast"
 import {dispatch} from "react-hot-toast/src/core/store.js";
 
 
@@ -92,7 +91,7 @@ export const removeFromCart =
 export const autheenticateSignInUser = (sendData, toast, reset, navigate, setLoader) => async (dispatch) => {
     try {
         setLoader(true);
-        const { data } = await api.post("/auth/signin", sendData);
+        const {data} = await api.post("/auth/signin", sendData);
         dispatch({
             type: "LOGIN_USER",
             payload: data
@@ -106,6 +105,26 @@ export const autheenticateSignInUser = (sendData, toast, reset, navigate, setLoa
         toast.error(error.response.data.message || "Internal Server Error")
     } finally {
         setLoader(false);
+    }
+
+    export const registerNewUser = (sendData, toast, reset, navigate, setLoader) => async (dispatch) => {
+        try {
+            setLoader(true);
+            const {data} = await api.post("/auth/signup", sendData);
+            dispatch({
+                type: "LOGIN_USER",
+                payload: data
+            });
+            localStorage.setItem("auth", JSON.stringify(data));
+            reset();
+            toast.success(data?.message || "User Registered Successfully");
+            navigate("/login");
+        } catch (error) {
+            console.log(error);
+            toast.error(error.response.data.message || error?.response?.data?.password || "Internal Server Error")
+        } finally {
+            setLoader(false);
+        }
     }
 }
 
