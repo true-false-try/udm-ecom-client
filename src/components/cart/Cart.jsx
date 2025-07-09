@@ -1,22 +1,23 @@
-import {MdArrowBack, MdShoppingCart} from "react-icons/md";
-import {Link} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import { MdArrowBack, MdShoppingCart } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import ItemContent from "./ItemContent.jsx";
 import CartEmpty from "./CartEmpty.jsx";
-import {formatPrice} from "../../utils/formatPrice.js";
+import { formatPrice } from "../../utils/formatPrice.js";
 
 const Cart = () => {
     const dispatch = useDispatch();
-    const {cart} = useSelector((state) => state.carts)
-    const newCart = {...cart};
+    const { cart } = useSelector((state) => state.carts);
 
-    newCart.totalPrice = cart?.reduce(
-        (acc, cur) => acc + Number(cur?.specialPrice) * Number(cur?.quantity), 0
-    );
+    const totalPrice = cart?.reduce((acc, cur) => {
+        const price = Number(cur?.specialPrice || 0);
+        const qty = Number(cur?.quantity || 0);
+        return acc + price * qty;
+    }, 0);
 
-    if (!cart || cart.length === 0 ) return <CartEmpty />;
+    if (!cart || cart.length === 0) return <CartEmpty />;
 
-    return(
+    return (
         <div className="lg:px-14 sm:px-8 px-4 py-10">
             <div className="flex flex-col items-center mb-12">
                 <h1 className="text-4xl font-bold text-gray-900 flex items-center gap-3">
@@ -26,49 +27,38 @@ const Cart = () => {
                 <p className="text-lg text-gray-600 mt-2">All your selected items</p>
             </div>
 
-            <div className="grid md:grid-cols-5 grid-cols-4 gap-4 pb-2 font-semibold items-center">
-                <div className="md:col-span-2 justify-self-start text-lg text-slate-800 lg-ps-4">
-                    Product
-                </div>
-                <div className="md:col-span-2 justify-self-start text-lg text-slate-800 lg-ps-4">
-                    Quantity
-                </div>
-                <div className="md:col-span-2 justify-self-start text-lg text-slate-800 lg-ps-4">
-                    Price
-                </div>
-                <div className="md:col-span-2 justify-self-start text-lg text-slate-800 lg-ps-4">
-                    Total
-                </div>
+            <div className="grid grid-cols-12 gap-4 pb-2 font-semibold items-center border-b border-slate-300">
+                <div className="col-span-5 text-lg text-slate-800">Product</div>
+                <div className="col-span-2 text-lg text-slate-800">Qty</div>
+                <div className="col-span-2 text-lg text-slate-800">Price</div>
+                <div className="col-span-3 text-lg text-slate-800">Total</div>
+            </div>
 
-                <div>
-                    {cart && cart.length > 0 &&
-                        cart.map((item, i) => <ItemContent key={i} {...item}/>)}
-                </div>
+            {cart.map((item, i) => (
+                <ItemContent key={i} {...item} />
+            ))}
 
-                <div className="border-t-[1.5px] border-slate-200 py-4 sm:flex sm:flex-row sm:px-0 px-2 flex-col sm:justify-between">
-                    <div></div>
-                    <div className="flex text-sm gap-l flex-col">
-                        <div className="flex justify-between w-full md:text-lg text-sm font-semibold">
-                            <span>Subtotal</span>
-                            <span>{formatPrice(newCart?.totalPrice)}</span>
-                        </div>
+            <div className="mt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 border-t pt-6">
+                <p className="text-slate-500">
+                    Taxes and shipping calculated at checkout
+                </p>
+                <div className="text-right w-full sm:w-auto">
+                    <div className="text-lg font-semibold flex justify-between sm:justify-end gap-4">
+                        <span>Subtotal:</span>
+                        <span>{formatPrice(totalPrice)}</span>
                     </div>
-                    <p className="text-slate-500">
-                        Taxes and shipping calculated at checkout
-                    </p>
-                    <Link className="w-full flex justify-end" to="/checkout">
+                    <Link to="/checkout">
                         <button
-                            onClick={() => {}}
-                            className="font-semibold w-[300px] py-2 px-4 rounded-sm text-white flex items-center justify-center gap-2 hover:text-gray-300 transition duration-500">
+                            className="mt-4 w-full sm:w-[300px] py-2 px-4 rounded-sm bg-gray-900 text-white flex items-center justify-center gap-2 hover:bg-gray-800 transition"
+                        >
                             <MdShoppingCart size={20} />
                             Checkout
                         </button>
                     </Link>
-                    
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
 export default Cart;
