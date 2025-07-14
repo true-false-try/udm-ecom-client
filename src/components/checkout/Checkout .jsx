@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {Step, StepLabel, Stepper} from "@mui/material";
+import AddressInfo from "./AddressInfo.jsx";
 
 const Checkout = () => {
 
@@ -21,6 +22,10 @@ const Checkout = () => {
                   </Step>
               })}
           </Stepper>
+
+          <div className="mt-5" >
+              {activeStep === 0 && <AddressInfo />}
+          </div>
       </div>
     );
 }
