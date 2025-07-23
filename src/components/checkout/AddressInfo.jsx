@@ -19,7 +19,9 @@ const AddressInfo = () => {
                 </div>
             ) : (
                 <div className='relative p-6 rounded-lg max-w-md mx-auto'>
-
+                    <h1 className='text-slate-800 taxt-center font-bold text-2xl'>
+                        Select address
+                    </h1>
                     {isLoading ? (
                         <div className='py-4 px-8'>
                             <Skeleton />
