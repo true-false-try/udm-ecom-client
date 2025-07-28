@@ -9,7 +9,6 @@ const AddressInfo = () => {
         <div className='pt-4'>
             {noAddressExist ? (
                 <div className='p-6 rounded-lg max-w-md mx-auto flex-col items-center justify-center'>
-                    <FaAddressBook size={50} className='text-gray-500 nb-4'/>
                     <h1 className='mb-2 text-slate-800 text-center font-semibold text-2xl'>
                         No addresses added yet
                     </h1>
@@ -19,7 +18,9 @@ const AddressInfo = () => {
                 </div>
             ) : (
                 <div className='relative p-6 rounded-lg max-w-md mx-auto'>
-
+                    <h1 className='text-slate-800 taxt-center font-bold text-2xl'>
+                        Select address
+                    </h1>
                 </div>
             )}
         </div>
