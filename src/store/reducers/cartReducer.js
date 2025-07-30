@@ -2,43 +2,43 @@ const initialState = {
     cart: [],
     totalPages: 0,
     cartId: null,
-};
+}
 
 export const cartReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "ADD_CART": {
-            const productToAdd = action.payload;
+        case "ADD_CART":
+            const product = action.payload;
             const existingProduct = state.cart.find(
-                (item) => item.id === productToAdd.id
+                (item) => item.id === product.id
             );
 
             if (existingProduct) {
-                const updatedCart = state.cart.map((item) =>
-                    item.id === productToAdd.id ? productToAdd : item
-                );
+                const updatedCart = state.cart.map((item) => {
+                    if (item.id === productToAdd.id) {
+                        return productToAdd;
+                    } else {
+                        return item;
+                    }
+                });
                 return {
                     ...state,
-                    cart: updatedCart,
-                };
+                    carts: updatedCart,
+                }
             } else {
-                const newCart = [...state.cart, productToAdd];
+                const newCart = [...state.cart, id];
                 return {
                     ...state,
-                    cart: newCart,
-                };
+                    carts: newCart,
+                }
             }
-        }
-
-        case "REMOVE_CART": {
+        case "REMOVE_CART":
             return {
                 ...state,
                 cart: state.cart.filter(
-                    (item) => item.id !== action.payload.id
+                    (item) =>  item.id !== action.payload.id
                 ),
-            };
-        }
-
+            }
         default:
             return state;
     }
-};
+}
