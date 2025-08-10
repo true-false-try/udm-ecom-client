@@ -15,6 +15,9 @@ const AddressInfo = () => {
             ) : noAddressExist ? (
                 <div className="p-6 rounded-lg max-w-md mx-auto flex flex-col items-center justify-center text-center bg-gray-100 shadow">
                     <FaAddressBook className="text-4xl text-blue-500 mb-4" />
+                    <h1 className="mb-2 text-slate-800 font-semibold text-2xl">
+                        No addresses added yet
+                    </h1>
                     <p className="text-slate-700 text-base">
                         Please add your address to complete the purchase
                     </p>
