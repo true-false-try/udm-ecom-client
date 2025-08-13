@@ -48,7 +48,12 @@ const UserMenu = () => {
                                 </MenuItem>
                             </Link>
                             <Link to="/profile/orders">
-
+                                <MenuItem className="flex gap-2" onClick={handleClose}>
+                                    <FaShoppingCart className='text-xl' />
+                                    <span className='font-semibold'>
+                                        Order
+                                    </span>
+                                </MenuItem>
                             </Link>
                             <MenuItem className="flex gap-2" onClick={logOutHandler}>
                                 <div className="font-semibold w-full flex gap-2 items-center bg-button-gradient px-4 py-1 text-white rounded-sm">
