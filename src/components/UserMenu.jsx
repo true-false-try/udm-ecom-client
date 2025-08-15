@@ -56,7 +56,12 @@ const UserMenu = () => {
                                 </MenuItem>
                             </Link>
                             <MenuItem className="flex gap-2" onClick={logOutHandler}>
-
+                                <div className="font-semibold w-full flex gap-2 items-center bg-button-gradient px-4 py-1 text-white rounded-sm">
+                                    <IoExitOutline className='text-xl' />
+                                    <span className='fond-bold text-[16px] nt-1'>
+                                       LogOut
+                                    </span>
+                                </div>
                             </MenuItem>
                         </Menu>
                         {open && <BackDrop />}
