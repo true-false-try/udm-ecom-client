@@ -33,7 +33,12 @@ const UserMenu = () => {
             <PopupState variant="popover" popupId="user-menu" parentPopupState={} disableAutoFocus={}>
                 {(popupState) => (
                     <React.Fragment>
-
+                        <Avatar
+                            alt="User Avatar"
+                            src=""
+                            {...bindTrigger(popupState)}
+                            sx={{ cursor: 'pointer' }}
+                        />
                         <Menu {...bindMenu(popupState)}>
                             <Link to="/profile">
                                 <MenuItem className="flex gap-2" onClick={popupState.close}>
