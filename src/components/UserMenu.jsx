@@ -28,8 +28,6 @@ const UserMenu = () => {
     return (
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
             <Button variant="contained">Dashboard</Button>
-
-
             <PopupState variant="popover" popupId="user-menu" parentPopupState={} disableAutoFocus={}>
                 {(popupState) => (
                     <React.Fragment>

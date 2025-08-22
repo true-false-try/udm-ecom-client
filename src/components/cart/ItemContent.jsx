@@ -24,14 +24,7 @@ const ItemContent = ({
     const [currentQuantity, setCurrentQuantity] = useState(quantity);
     const dispatch = useDispatch();
 
-    const  handleQuantityIncrease = (cartItems) => {
-      dispatch(increaseCartQuantity(
-          cartItems,
-          toast,
-          currentQuantity,
-          setCurrentQuantity
-      ));
-    };
+
 
     const handleQuantityDecrease = (cartItems) => {
         if (currentQuantity > 1) {
