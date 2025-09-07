@@ -30,12 +30,7 @@ const useProductFilter = () => {
         params.set(SORT_BY, PRICE);
         params.set(SORTED_ORDER, sortOrder);
 
-        if (categoryParams) {
-            params.set(CATEGORY, categoryParams)
-        }
-        if (keyword) {
-            params.set(KEYWORD, keyword)
-        }
+
 
         const queryString = params.toString();
         console.log("QUERY STRING", queryString);
