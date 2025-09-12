@@ -53,19 +53,6 @@ const Register = () => {
                         />
                     </div>
 
-                    <div>
-                        <InputField
-                            label="Email"
-                            required
-                            id="email"
-                            type="email"
-                            message="*Email is required"
-                            placeholder="Enter your email"
-                            register={register}
-                            errors={errors}
-                        />
-                    </div>
-
                     <button disabled={loader}
                             className="bg-button-gradient flex gap-2 items-center justify-center font-semibold text-white w-full py-2 hover:text-slate-400 transition-colors duration-100 rounded-sm my-3"
                             type="submit">
