@@ -40,7 +40,18 @@ const Register = () => {
                             errors={errors}
                         />
                     </div>
-                    
+                    <div>
+                        <InputField
+                            label="Password"
+                            required
+                            id="password"
+                            type="password"
+                            message="*Password is required"
+                            placeholder="Enter your password"
+                            register={register}
+                            errors={errors}
+                        />
+                    </div>
                     <div>
                         <InputField
                             label="Email"
