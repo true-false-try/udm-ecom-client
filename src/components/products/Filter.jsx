@@ -14,7 +14,19 @@ const Filter = ({categories}) => {
     const navigate = useNavigate();
     const params = new URLSearchParams(searchParams);
 
-
+    useEffect(() => {
+        const handler = setTimeout(() => {
+            if(searchParams){
+               searchParams.set("keyword", searchTerm);
+            } else {
+                searchParams.delete("keyword")
+            }
+            navigate(`${pathname}?${searchParams.toString()}`);
+        }, 700);
+        return () => {
+            clearTimeout(handler);
+        }
+    }, [searchParams, searchTerm, navigate, pathname])
 
     const handleCategoryChange = (event) => {
         const selectedCategory = event.target.value;
