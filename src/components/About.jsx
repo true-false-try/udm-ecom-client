@@ -44,24 +44,7 @@ const About = () => {
                          alt="About Us" className="w-full h-auto rounted-lg shadow-lg transform transitional duration-300 hover:scale-105" />
                 </div>
 
-                <div className="py-7 space-y-8">
-                    <h1 className="text-slate-800 text-4xl font-bold text-center">
-                        Our Products
-                    </h1>
-                    <div className='grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-y-6 gap-x-6'>
-                        {
-                            products.map((product) => (
-                                <ProductCard key={index}
-                                             image={product.image}
-                                             productName={product.name}
-                                             description={product.description}
-                                             specialPrice={product.specialPrice}
-                                             price={product.price}
-                                             about={product.about}/>
-                            ))
-                        }
-                    </div>
-                </div>
+
             </div>
 
         </div>
