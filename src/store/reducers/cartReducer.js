@@ -12,7 +12,25 @@ export const cartReducer = (state = initialState, action) => {
                 (item) => item.id === product.id
             );
 
-
+            if (existingProduct) {
+                const updatedCart = state.cart.map((item) => {
+                    if (item.id === productToAdd.id) {
+                        return productToAdd;
+                    } else {
+                        return item;
+                    }
+                });
+                return {
+                    ...state,
+                    carts: updatedCart,
+                }
+            } else {
+                const newCart = [...state.cart, id];
+                return {
+                    ...state,
+                    carts: newCart,
+                }
+            }
         case "REMOVE_CART":
             return {
                 ...state,
