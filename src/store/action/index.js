@@ -72,20 +72,7 @@ export const increaseCartQuantity =
             }
 };
 
-export const decreaseCartQuantity =
-    (data, newQuantity) => (dsipatch, getState) => {
-        dispatch({
-            type: "ADD_CART",
-            payload: {...data, quantity: newQuantity},
-        })
-        localStorage.setItem("cartItems", JSON.stringify(getState().carts.cart));
-    };
-export const removeFromCart =
-    (data, toast) => (dispatch, getState) => {
-     dispatch({type:"REMOVE_CART", payload: data})
-        toast.success(`${data.productName} remove from cart`);
-        localStorage.setItem("cartItems", JSON.stringify(getState().carts.cart));
-    }
+
 
 export const authenticateSignInUser = (sendData, toast, reset, navigate, setLoader) => async (dispatch) => {
     try {
