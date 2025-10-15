@@ -18,5 +18,14 @@ const initialState = {
     carts: {cart: cartItems},
 }
 
+export const store = configureStore({
+    reducer:{
+        products: productReducer,
+        errors: errorReducer,
+        cart: cartReducer,
+        auth: authReducer,
+    },
+    preloadedState:  initialState,
+});
 
 export default store;
