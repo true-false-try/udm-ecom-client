@@ -17,8 +17,6 @@ const Products = () => {
 
     const dispatch = useDispatch();
 
-    useProductFilter();
-
     useEffect(() => {
             dispatch(fetchCategories())
         },[dispatch]);
