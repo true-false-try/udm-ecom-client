@@ -12,6 +12,11 @@ import Pagination from "../shared/CustomPagination.jsx";
 
 const Products = () => {
 
+    const{ isLoading, errorMessage } = useSelector(
+        (state) => state.errors
+    );
+
+    useProductFilter();
 
     const { products, categories, pagination} = useSelector((state) => state.product || {});
 
