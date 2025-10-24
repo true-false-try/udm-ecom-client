@@ -6,6 +6,7 @@ const PrivateRoute = ({ publicPage = false}) => {
     if (publicPage) {
         return user ? <Navigate to="/profile" /> : <Outlet />
     }
+    return user ? <Outlet /> : <Navigate to="/login" />
 }
 
 export default PrivateRoute;
