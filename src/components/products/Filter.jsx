@@ -28,6 +28,16 @@ const Filter = ({categories}) => {
         }
     }, [searchParams, searchTerm, navigate, pathname])
 
+    const handleCategoryChange = (event) => {
+        const selectedCategory = event.target.value;
+        if(selectedCategory === 'all'){
+            params.delete("category");
+        } else {
+            params.set("category", selectedCategory)
+        }
+        navigate(`${pathname}?${params}`)
+        setCategory(event.target.value);
+    };
 
     const toggleSortOrder = () => {
         setSortOrder((prevOrder) =>  {
@@ -39,7 +49,7 @@ const Filter = ({categories}) => {
     };
 
     const handleClearFilter = () => {
-         navigate({pathname : window.location.pathname})
+        navigate({pathname : window.location.pathname})
     };
 
     return(
@@ -79,9 +89,9 @@ const Filter = ({categories}) => {
                     <Button onClick={toggleSortOrder} variant="contained" color="primary" className="flex items-center gap-2 h-10">
                         Sort by
                         {sortOrder === "asc"} ? (
-                            <FiArrowUp size={20} />
+                        <FiArrowUp size={20} />
                         ) : (
-                            <FiArrowDown size={20} />
+                        <FiArrowDown size={20} />
                         )
                     </Button>
                 </Tooltip>
