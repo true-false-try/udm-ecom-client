@@ -56,7 +56,14 @@ const Cart = () => {
                     <p className="text-slate-500">
                         Taxes and shipping calculated at checkout
                     </p>
-
+                    <Link className="w-full flex justify-end" to="/checkout">
+                        <button
+                            onClick={() => {}}
+                            className="font-semibold w-[300px] py-2 px-4 rounded-sm text-white flex items-center justify-center gap-2 hover:text-gray-300 transition duration-500">
+                            <MdShoppingCart size={20} />
+                            Checkout
+                        </button>
+                    </Link>
 
                 </div>
             </div>
