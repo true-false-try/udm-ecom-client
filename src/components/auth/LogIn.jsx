@@ -21,10 +21,7 @@ const LogIn = () =>  {
         mode: "onTouched",
     });
 
-    const loginHandle = async (data) => {
-        console.log("Login Click");
-        dispatch(authenticateSignInUser(data, toast, reset, navigate, setLoader,));
-    }
+
 
     return (
         <div className="min-h-[calc(100vh-64px)] flex justify-center items-center">
