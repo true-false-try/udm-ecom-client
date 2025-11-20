@@ -128,11 +128,6 @@ export const authenticateSignInUser = (sendData, toast, reset, navigate, setLoad
 
 }
 
-export const logOutUser = (navigate) => (dispatch) => {
-    dispatch({type:"LOG_OUT"});
-    localStorage.removeItem("auth");
-    navigate("login");
 
-}
 
 
