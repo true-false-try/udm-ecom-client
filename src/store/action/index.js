@@ -114,7 +114,10 @@ export const authenticateSignInUser = (sendData, toast, reset, navigate, setLoad
                 type: "LOGIN_USER",
                 payload: data
             });
-
+            localStorage.setItem("auth", JSON.stringify(data));
+            reset();
+            toast.success(data?.message || "User Registered Successfully");
+            navigate("/login");
         } catch (error) {
             console.log(error);
             toast.error(error.response.data.message || error?.response?.data?.password || "Internal Server Error")
