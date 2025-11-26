@@ -15,7 +15,13 @@ const Contact = () => {
                 </p>
 
 
-
+                <div className="mt-8 text-center">
+                    <h2 className="text-lg font-semibold">Contact Information</h2>
+                    <div className="flex flex-col item">
+                        <div className="flex item-center"></div>
+                        <FaPhone className="text-blue-500 mr-2"/>
+                        <span>+38073*******</span>
+                    </div>
 
                     <div className="flex flex-col item">
                         <div className="flex item-center"></div>
