@@ -21,8 +21,6 @@ const LogIn = () =>  {
         mode: "onTouched",
     });
 
-
-
     return (
         <div className="min-h-[calc(100vh-64px)] flex justify-center items-center">
             <form onSubmit={handleSubmit(loginHandle)}
@@ -33,7 +31,18 @@ const LogIn = () =>  {
                         Login Here
                     </h1>
                     <hr className="mt-2 mb-5 text-black" />
-
+                    <div className="flex flex-col gap-3">
+                        <InputField
+                            label="UserName"
+                            required
+                            id="username"
+                            type="text"
+                            message="*Username is required"
+                            placeholder="Enter your username"
+                            register={register}
+                            errors={errors}
+                        />
+                    </div>
                 </div>
 
                 <p className="text-center text-sm text-slate-700 mt-6">
