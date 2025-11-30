@@ -46,12 +46,6 @@ const Products = () => {
                         products.map((item,i) => <ProductCard key={i} {...item} />)
                     }
                 </div>
-                  <div className='flex justify-center pt-10'>
-                      <Pagination
-                          numberOfPage = {pagination?.totalPages}
-                          totalProducts = {pagination?.totalElements}
-                      />
-                  </div>
               </div>
           )
           }

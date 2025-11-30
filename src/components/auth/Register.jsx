@@ -77,6 +77,7 @@ const Register = () => {
 
                     </button>
                 </div>
+
                 <p className="text-center text-sm text-slate-700 mt-6">
                     Already hava an account ?
                     <Link className="font-semibold underline hover:text-black"
