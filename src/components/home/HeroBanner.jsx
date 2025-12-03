@@ -33,7 +33,10 @@ export default () => {
                                             <h3 className='text-3xl text-white font-bold'>{item.title}</h3>
                                             <h1 className='text-5xl text-white-bold mt-2'></h1>
                                             <p className='text-white font-bold mt-4'>{item.description}</p>
-
+                                            <Link className='mt-6 inline-block bg-black text-white py-2 px-4 rounded hover:bg-g'
+                                                  to="/products">
+                                                Shop
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
