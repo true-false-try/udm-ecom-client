@@ -5,17 +5,17 @@ import {dispatch} from "react-hot-toast/src/core/store.js";
 export const fetchCategories = (queryString) => async(dispatch) => {
     try {
         dispatch({type:"CATEGORY_LOADER"});
-         const {data} = await api.get(`/public/products?${queryString}`);
-         dispatch({
-             type: "FETCH_CATEGORIES",
-             payload: data.content,
-             pageNumber: data.pageNumber,
-             pageSize: data.pageSize,
-             totalElements: data.totalElements,
-             totalPages: data.totalPages,
-             lastPage: data.lastPage,
-         });
-         dispatch({type:"IS_ERROR"});
+        const {data} = await api.get(`/public/products?${queryString}`);
+        dispatch({
+            type: "FETCH_CATEGORIES",
+            payload: data.content,
+            pageNumber: data.pageNumber,
+            pageSize: data.pageSize,
+            totalElements: data.totalElements,
+            totalPages: data.totalPages,
+            lastPage: data.lastPage,
+        });
+        dispatch({type:"IS_ERROR"});
     } catch (error) {
         console.log(error);
         dispatch({
@@ -70,7 +70,7 @@ export const increaseCartQuantity =
             } else {
                 toast.error("Quantity Reached to Limit");
             }
-};
+        };
 
 export const decreaseCartQuantity =
     (data, newQuantity) => (dsipatch, getState) => {
@@ -106,6 +106,25 @@ export const authenticateSignInUser = (sendData, toast, reset, navigate, setLoad
         setLoader(false);
     }
 
+    export const registerNewUser = (sendData, toast, reset, navigate, setLoader) => async (dispatch) => {
+        try {
+            setLoader(true);
+            const {data} = await api.post("/auth/signup", sendData);
+            dispatch({
+                type: "LOGIN_USER",
+                payload: data
+            });
+            localStorage.setItem("auth", JSON.stringify(data));
+            reset();
+            toast.success(data?.message || "User Registered Successfully");
+            navigate("/login");
+        } catch (error) {
+            console.log(error);
+            toast.error(error.response.data.message || error?.response?.data?.password || "Internal Server Error")
+        } finally {
+            setLoader(false);
+        }
+    }
 
 }
 
