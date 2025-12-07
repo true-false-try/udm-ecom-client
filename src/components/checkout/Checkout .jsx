@@ -5,12 +5,7 @@ import AddressInfo from "./AddressInfo.jsx";
 const Checkout = () => {
 
     const [activeStep, setActiveStep] = useState(0);
-    const steps = [
-        "Address",
-        "Payment Method",
-        "Order Summary",
-        "Payment",
-    ]
+
     return (
       <div className='py-14 min-h-[calc(100vh - 100px)]'>
           <Stepper activeStep={activeStep} alternativeLabel>

@@ -40,9 +40,7 @@ export default () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="w-full flex justify-center lg:w-1/2 p-4">
-                                    <img src={item?.image} alt={item?.title}/>
-                                </div>
+
                             </div>
                         </SwiperSlide>
                     ))}

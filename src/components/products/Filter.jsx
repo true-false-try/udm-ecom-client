@@ -105,7 +105,6 @@ const Filter = ({categories}) => {
                 </button>
             </div>
 
-
         </div>
     )
 }
