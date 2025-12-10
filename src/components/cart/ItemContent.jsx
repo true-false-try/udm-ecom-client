@@ -5,18 +5,20 @@ import {decreaseCartQuantity, increaseCartQuantity, removeFromCart} from "../../
 import toast from "react-hot-toast";
 import {formatPrice} from "../../utils/formatPrice.js";
 
-
+function HitOtlineTrash(props: { size: number, className: string }) {
+    return null;
+}
 
 const ItemContent = ({
-    productId,
-    productName,
-    image,
-    description,
-    quantity,
-    price,
-    discount,
-    specialPrice,
-    cartId
+                         productId,
+                         productName,
+                         image,
+                         description,
+                         quantity,
+                         price,
+                         discount,
+                         specialPrice,
+                         cartId
                      }) =>  {
 
     const [currentQuantity, setCurrentQuantity] = useState(quantity);
@@ -78,24 +80,24 @@ const ItemContent = ({
             </div>
 
             <div className="justify-self-center">
-               <SetQuantity quantity={currentQuantity}
-                            cardCounter={true}
-                            handeQtyIncrease={() => handleQuantityIncrease({
-                                    image,
-                                    productName,
-                                    description,
-                                    specialPrice,
-                                    price,
-                                    quantity
-                            })}
-                            handleQuantityDecrease={() => handleQuantityDecrease({
-                                image,
-                                productName,
-                                description,
-                                specialPrice,
-                                price,
-                                quantity
-                            })} />
+                <SetQuantity quantity={currentQuantity}
+                             cardCounter={true}
+                             handeQtyIncrease={() => handleQuantityIncrease({
+                                 image,
+                                 productName,
+                                 description,
+                                 specialPrice,
+                                 price,
+                                 quantity
+                             })}
+                             handleQuantityDecrease={() => handleQuantityDecrease({
+                                 image,
+                                 productName,
+                                 description,
+                                 specialPrice,
+                                 price,
+                                 quantity
+                             })} />
             </div>
 
             <div className="justify-self-center lg:text-[17px] text-sm slate-slate-600 font-semibold">
