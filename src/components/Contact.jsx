@@ -25,12 +25,6 @@ const Contact = () => {
 
                     <div className="flex flex-col item">
                         <div className="flex item-center"></div>
-                        <FaEnvelope className="text-blue-500 mr-2"/>
-                        <span className="text-gray-500">infotest@gmail.com</span>
-                    </div>
-
-                    <div className="flex flex-col item">
-                        <div className="flex item-center"></div>
                         <FaMapMarkerAlt className="text-blue-500 mr-2"/>
                         <span className="text-gray-500">123 Main, Towm, USA</span>
                     </div>
