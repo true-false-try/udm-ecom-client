@@ -5,10 +5,6 @@ import {decreaseCartQuantity, increaseCartQuantity, removeFromCart} from "../../
 import toast from "react-hot-toast";
 import {formatPrice} from "../../utils/formatPrice.js";
 
-function HitOtlineTrash(props: { size: number, className: string }) {
-    return null;
-}
-
 const ItemContent = ({
                          productId,
                          productName,
