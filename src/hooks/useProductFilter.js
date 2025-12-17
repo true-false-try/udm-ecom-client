@@ -27,8 +27,7 @@ const useProductFilter = () => {
         const categoryParams = searchParams.get(CATEGORY) || null;
         const keyword = searchParams.get(KEYWORD) || null;
 
-        params.set(SORT_BY, PRICE);
-        params.set(SORTED_ORDER, sortOrder);
+
 
         if (categoryParams) {
             params.set(CATEGORY, categoryParams)

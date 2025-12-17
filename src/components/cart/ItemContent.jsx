@@ -79,27 +79,6 @@ const ItemContent = ({
                 {formatPrice(Number(specialPrice))}
             </div>
 
-            <div className="justify-self-center">
-                <SetQuantity quantity={currentQuantity}
-                             cardCounter={true}
-                             handeQtyIncrease={() => handleQuantityIncrease({
-                                 image,
-                                 productName,
-                                 description,
-                                 specialPrice,
-                                 price,
-                                 quantity
-                             })}
-                             handleQuantityDecrease={() => handleQuantityDecrease({
-                                 image,
-                                 productName,
-                                 description,
-                                 specialPrice,
-                                 price,
-                                 quantity
-                             })} />
-            </div>
-
             <div className="justify-self-center lg:text-[17px] text-sm slate-slate-600 font-semibold">
                 {formatPrice(Number(currentQuantity) * Number(specialPrice))}
             </div>
