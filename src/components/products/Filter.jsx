@@ -99,7 +99,7 @@ const Filter = ({categories}) => {
                     className="flex items-center gap-2 bg-rose-900 text-white px-3 py-2 rounded-md transition duration-300"
                     onClick={handleClearFilter}
                 >
-                    <FiRefreshCw  className="font-semibold" size={16}/>
+
                     <span className="font-semibold">Clear Filter</span>
 
                 </button>
