@@ -100,9 +100,6 @@ const ItemContent = ({
                              })} />
             </div>
 
-            <div className="justify-self-center lg:text-[17px] text-sm slate-slate-600 font-semibold">
-                {formatPrice(Number(currentQuantity) * Number(specialPrice))}
-            </div>
 
         </div>
     );
