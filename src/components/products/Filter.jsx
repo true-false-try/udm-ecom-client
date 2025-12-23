@@ -95,14 +95,7 @@ const Filter = ({categories}) => {
                         )
                     </Button>
                 </Tooltip>
-                <button
-                    className="flex items-center gap-2 bg-rose-900 text-white px-3 py-2 rounded-md transition duration-300"
-                    onClick={handleClearFilter}
-                >
 
-                    <span className="font-semibold">Clear Filter</span>
-
-                </button>
             </div>
 
 
