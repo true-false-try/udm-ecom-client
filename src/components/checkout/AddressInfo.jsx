@@ -23,11 +23,7 @@ const AddressInfo = () => {
                     </p>
                 </div>
             ) : (
-                <div className="relative p-6 rounded-lg max-w-md mx-auto bg-white shadow">
-                    <h1 className="text-slate-800 text-center font-bold text-2xl">
-                        Select an address
-                    </h1>
-                </div>
+
             )}
         </div>
     );
