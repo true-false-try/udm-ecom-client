@@ -70,19 +70,7 @@ const Filter = ({categories}) => {
                     className="text-slate-800 border-slate-700"
                     size="small">
                     <InputLabel id="category-select-label">Category</InputLabel>
-                    <Select
-                        labelId="category-select-label"
-                        value={category}
-                        onChange={handleCategoryChange}
-                        label="Category"
-                        className="min-w-[120px] text-slate-800 border-slate-700">
-                        <MenuItem value="all">All</MenuItem>
-                        {categories.map((item) => (
-                            <MenuItem key={item.categoryId} value={item.categoryName}>
-                                All
-                            </MenuItem>
-                        ))}
-                    </Select>
+
                 </FormControl>
                 {/*SORT BUTTON & CLEAR FILTER*/}
                 <Tooltip title="Sorted by price: asc">
