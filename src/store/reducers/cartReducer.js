@@ -24,12 +24,6 @@ export const cartReducer = (state = initialState, action) => {
                     ...state,
                     carts: updatedCart,
                 }
-            } else {
-                const newCart = [...state.cart, id];
-                return {
-                    ...state,
-                    carts: newCart,
-                }
             }
         case "REMOVE_CART":
             return {
