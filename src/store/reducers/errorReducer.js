@@ -13,12 +13,7 @@ export const errorReducer = (state = initialState, action) => {
                 isLoading: true,
                 errorMessage: null
             }
-        case "IS_SUCCESS":
-            return {
-                ...state,
-                isLoading: true,
-                errorMessage: null,
-            }
+
         case "IS_ERROR":
             return {
                 ...state,
