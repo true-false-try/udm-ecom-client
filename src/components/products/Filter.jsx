@@ -25,14 +25,7 @@ const Filter = ({categories}) => {
         setCategory(event.target.value);
     };
 
-    const toggleSortOrder = () => {
-        setSortOrder((prevOrder) =>  {
-            const newOrder = (prevOrder === "asc") ? "desc" : "asc";
-            params.set("sortby", newOrder);
-            navigate(`${pathname}?${params}`);
-            return newOrder;
-        })
-    };
+
 
     const handleClearFilter = () => {
         navigate({pathname : window.location.pathname})
