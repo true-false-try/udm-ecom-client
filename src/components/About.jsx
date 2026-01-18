@@ -10,22 +10,6 @@ const About = () => {
             specialPrice: 720,
             price: 780,
         },
-        {
-            image: "https://embarkx.com/sample/placeholder.png",
-            productName: "Samsung Galaxy S21",
-            description:
-                "Experience the brilliance of the Samsung Galaxy S21 with its vibrant AMOLED display, powerful camera, and sleek design that fits perfectly in your hand.",
-            specialPrice: 699,
-            price: 799,
-        },
-        {
-            image: "https://embarkx.com/sample/placeholder.png",
-            productName: "Google Pixel 6",
-            description:
-                "The Google Pixel 6 boasts cutting-edge AI features, exceptional photo quality, and a stunning display, making it a perfect choice for Android enthusiasts.",
-            price: 599,
-            specialPrice: 400,
-        }
 
     ]
 
