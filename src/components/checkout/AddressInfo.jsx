@@ -8,10 +8,7 @@ const AddressInfo = () => {
     return (
         <div className="pt-4">
             {isLoading ? (
-                <div className="max-w-md mx-auto p-6">
-                    <Skeleton variant="text" height={40} />
-                    <Skeleton variant="text" height={30} />
-                </div>
+
             ) : noAddressExist ? (
                 <div className="p-6 rounded-lg max-w-md mx-auto flex flex-col items-center justify-center text-center bg-gray-100 shadow">
                     <FaAddressBook className="text-4xl text-blue-500 mb-4" />
