@@ -31,9 +31,6 @@ const Cart = () => {
                     Product
                 </div>
                 <div className="md:col-span-2 justify-self-start text-lg text-slate-800 lg-ps-4">
-                    Quantity
-                </div>
-                <div className="md:col-span-2 justify-self-start text-lg text-slate-800 lg-ps-4">
                     Price
                 </div>
                 <div className="md:col-span-2 justify-self-start text-lg text-slate-800 lg-ps-4">
