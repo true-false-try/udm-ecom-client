@@ -13,6 +13,10 @@ const  cartItems = localStorage.getItem("cartItems") ?
     JSON.parse(localStorage.getItem("cartItems")) :
     [];
 
+const initialState = {
+    auth: {user: user},
+    carts: {cart: cartItems},
+}
 
 export const store = configureStore({
     reducer:{
