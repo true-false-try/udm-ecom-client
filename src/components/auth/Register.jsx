@@ -33,6 +33,16 @@ const LogIn = () =>  {
                     <hr className="mt-2 mb-5 text-black" />
                 </div>
 
+                <p className="text-center text-sm text-slate-700 mt-6">
+                    Don't have an account?
+                    <Link className="font-semibold underline hover:text-black"
+                          to="/register"
+                    >
+                        <span>
+                            SignUp
+                        </span>
+                    </Link>
+                </p>
             </form>
         </div>
     );
