@@ -9,9 +9,7 @@ const CartEmpty = () => {
                 <div className="text-3xl font-bold text-slate-700">
                     Your cart is empty
                 </div>
-                <div className="text-lg text-slate-500 md-2">
-                    Add some products to get started
-                </div>
+
             </div>
             <div className="mt6">
                 <Link to={"/"}
