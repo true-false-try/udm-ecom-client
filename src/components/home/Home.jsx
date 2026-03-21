@@ -26,9 +26,6 @@ const Home = () => {
             <div className="py-5">
                 <div className="flex flex-col justify-center space-y-2">
                     <h1 className="text-2xl font-bold text-gray-900">
-                    <span className="text-salte-800">
-                        Discover our handpicked selection of top-rated items just for you!
-                    </span>
                     </h1>
                 </div>
                 {isLoading ? (
