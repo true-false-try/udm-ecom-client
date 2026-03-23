@@ -27,18 +27,6 @@ const Cart = () => {
             </div>
 
             <div className="grid md:grid-cols-5 grid-cols-4 gap-4 pb-2 font-semibold items-center">
-                <div className="md:col-span-2 justify-self-start text-lg text-slate-800 lg-ps-4">
-                    Product
-                </div>
-                <div className="md:col-span-2 justify-self-start text-lg text-slate-800 lg-ps-4">
-                    Quantity
-                </div>
-                <div className="md:col-span-2 justify-self-start text-lg text-slate-800 lg-ps-4">
-                    Price
-                </div>
-                <div className="md:col-span-2 justify-self-start text-lg text-slate-800 lg-ps-4">
-                    Total
-                </div>
 
                 <div>
                     {cart && cart.length > 0 &&
