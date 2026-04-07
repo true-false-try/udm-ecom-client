@@ -14,9 +14,7 @@ const Contact = () => {
                     We would love to hear from you! Please fill out the form below or contact us directly.
                 </p>
 
-
                 <div className="mt-8 text-center">
-                    <h2 className="text-lg font-semibold">Contact Information</h2>
 
                     <div className="flex flex-col item">
                         <div className="flex item-center"></div>
