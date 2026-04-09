@@ -19,6 +19,9 @@ const Home = () => {
 
     return (
         <div className="lg:px-14 sm:px-8 px-4">
+            <div className="py-6">
+                <HeroBanner />
+            </div>
 
             <div className="py-5">
                 <div className="flex flex-col justify-center space-y-2">
