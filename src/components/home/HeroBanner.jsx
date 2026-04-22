@@ -18,11 +18,10 @@ export default () => {
         return (
             <div className="py-2 round-md">
                 <Swiper grabCursor={true}
-                        autoplay={{delay:4000, disableOnInteraction:false}}
+                        autoplay={{delay:3000, disableOnInteraction:false}}
                         navigation
                         modules={[Pagination, EffectFade, Navigation, Autoplay]}
                         pagination={{ clickable:true }}
-                        scrollbar={{ draggable: true }}
                         slidesPerView={1}>
                     {bannerList.map((item, index) => (
                         <SwiperSlide key={item.id}>
