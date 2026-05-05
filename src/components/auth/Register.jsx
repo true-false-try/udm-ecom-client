@@ -9,9 +9,7 @@ const LogIn = () =>  {
     const dispatch = useDispatch();
     const [loader, setLoader] = useState(false);
     const {
-        register,
         handleSubmit,
-        reset,
         formState: {errors},
     } = useForm({
         mode: "onTouched",
