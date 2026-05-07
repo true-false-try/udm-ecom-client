@@ -9,9 +9,6 @@ import toast from "react-hot-toast";
 import Spinners from "../shared/Spinners.jsx";
 
 const LogIn = () =>  {
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const [loader, setLoader] = useState(false);
     const {
         register,
         handleSubmit,
