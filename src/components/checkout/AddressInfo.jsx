@@ -18,9 +18,6 @@ const AddressInfo = () => {
                     <h1 className="mb-2 text-slate-800 font-semibold text-2xl">
                         No addresses added yet
                     </h1>
-                    <p className="text-slate-700 text-base">
-                        Please add your address to complete the purchase
-                    </p>
                 </div>
             ) : (
                 <div className="relative p-6 rounded-lg max-w-md mx-auto bg-white shadow">
