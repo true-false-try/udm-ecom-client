@@ -34,6 +34,9 @@ const LogIn = () =>  {
                     <Link className="font-semibold underline hover:text-black"
                           to="/register"
                     >
+                        <span>
+                            SignUp
+                        </span>
                     </Link>
                 </p>
             </form>
