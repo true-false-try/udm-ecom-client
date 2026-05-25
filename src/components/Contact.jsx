@@ -15,12 +15,6 @@ const Contact = () => {
                 </p>
 
                 <div className="mt-8 text-center">
-
-                    <div className="flex flex-col item">
-                        <div className="flex item-center"></div>
-                        <FaMapMarkerAlt className="text-blue-500 mr-2"/>
-                        <span className="text-gray-500">123 Main, Towm, USA</span>
-                    </div>
                 </div>
             </div>
         </div>
