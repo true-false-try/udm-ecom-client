@@ -33,7 +33,7 @@ const Home = () => {
                     ):
                     errorMessage ? (
                         <div className="flex justify-center items-center h-[200px]">
-
+                            <FaExclamationTriangle  className="text-state-800 text-3xl mr-2"/>
                             <span className="text-state-800 text-lg font-medium">
                         {errorMessage}
                       </span>
