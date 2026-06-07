@@ -30,6 +30,7 @@ const LogIn = () =>  {
                     <h1 className="text-slate-800 text-center font-montserrat lg:text-3xl text-2xl font-bold">
                         Login Here
                     </h1>
+                    <hr className="mt-2 mb-5 text-black" />
                     <div className="flex flex-col gap-3">
                         <InputField
                             label="UserName"
