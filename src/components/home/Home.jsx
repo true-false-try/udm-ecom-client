@@ -24,7 +24,10 @@ const Home = () => {
             </div>
 
             <div className="py-5">
-
+                <div className="flex flex-col justify-center space-y-2">
+                    <h1 className="text-2xl font-bold text-gray-900">
+                    </h1>
+                </div>
                 {isLoading ? (
                         <Loader />
                     ):
