@@ -10,6 +10,10 @@ const Contact = () => {
                 <h1 className="text-4xl font-bold text-center mb-6">
                     Contact Us
                 </h1>
+                <p className="text-gray-600 text-center mb4 ">
+                    We would love to hear from you! Please fill out the form below or contact us directly.
+                </p>
+
                 <div className="mt-8 text-center">
 
                     <div className="flex flex-col item">
