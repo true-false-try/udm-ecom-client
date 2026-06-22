@@ -37,14 +37,6 @@ const UserMenu = () => {
                             sx={{ cursor: 'pointer' }}
                         />
                         <Menu {...bindMenu(popupState)}>
-                            <Link to="/profile">
-                                <MenuItem className="flex gap-2" onClick={popupState.close}>
-                                    <BiUser className='text-xl' />
-                                    <span className='fond-bold text-[16px] nt-1'>
-                                        {user?.username}
-                                    </span>
-                                </MenuItem>
-                            </Link>
                             <Link to="/profile/orders">
                                 <MenuItem className="flex gap-2" onClick={handleClose}>
                                     <FaShoppingCart className='text-xl' />
