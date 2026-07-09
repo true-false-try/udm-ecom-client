@@ -1,6 +1,5 @@
 const initialState = {
     cart: [],
-    totalPages: 0,
     cartId: null,
 }
 
@@ -14,28 +13,28 @@ export const cartReducer = (state = initialState, action) => {
 
             if (existingProduct) {
                 const updatedCart = state.cart.map((item) => {
-                    if (item.id === productToAdd.id) {
-                        return productToAdd;
+                    if (item.id === product.id) {
+                        return product;
                     } else {
                         return item;
                     }
                 });
                 return {
                     ...state,
-                    carts: updatedCart,
+                    cart: updatedCart,
                 }
             } else {
-                const newCart = [...state.cart, id];
+                const newCart = [...state.cart, product];
                 return {
                     ...state,
-                    carts: newCart,
+                    cart: newCart,
                 }
             }
         case "REMOVE_CART":
             return {
                 ...state,
                 cart: state.cart.filter(
-                    (item) =>  item.id !== action.payload.id
+                    (item) => item.id !== action.payload.id
                 ),
             }
         default:

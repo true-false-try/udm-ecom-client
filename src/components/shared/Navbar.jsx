@@ -8,99 +8,88 @@ import {useSelector} from "react-redux";
 import UserMenu from "../UserMenu.jsx";
 
 const Navbar = () => {
-    const path =  useLocation().pathname
+    const path = useLocation().pathname;
     const [navbarOpen, setNavbarOpen] = useState(false);
-    const {cart} = useSelector((state) => state.carts);
+    const {cart} = useSelector((state) => state.cart);
     const {user} = useSelector((state) => state.auth);
 
     return (
-        <div className="h-[70px] bg-custom-gradient text-white z-50 flex items-center top-0">
+        <div className="h-[70px] bg-custom-gradient text-white z-50 flex items-center top-0 sticky">
             <div className="lg:px-14 sm:px-8 px-4 w-full flex items-center justify-between">
                 <Link to="/" className="flex items-center text-2xl font-bold">
-                    <FaStore className="mr2 text-3xl" />
+                    <FaStore className="mr-2 text-3xl" />
                     <span className="font-[Poppins]">E-Shop</span>
                 </Link>
 
-                <ul className={`flex sm:gap-10 gap-4 sm:items-center text-slate-800 sm:static absolute left-0-top-[70px] sm:shadow-none shadow-md ${
-                    navbarOpen ? 'sm' : 'md'
-                }` }>
+                <ul className={`flex sm:gap-10 gap-4 sm:items-center text-slate-200 sm:static ${
+                    navbarOpen
+                        ? 'flex-col absolute left-0 top-[70px] bg-gray-800 w-full px-4 py-4 shadow-md z-50'
+                        : 'hidden sm:flex'
+                }`}>
                     <li className="font-[500] transition-all duration-150">
-                        <Link className={`${
-                            path === "/" ? "text-white font-semibold" : "text-grey-200"
-                        }`}
-                        to={"/"}>
+                        <Link className={`${path === "/" ? "text-white font-semibold" : "text-slate-300"}`}
+                              to={"/"}>
                             Home
                         </Link>
                     </li>
 
                     <li className="font-[500] transition-all duration-150">
-                        <Link className={`${
-                            path === "/products" ? "text-white font-semibold" : "text-grey-200"
-                        }`}
+                        <Link className={`${path === "/products" ? "text-white font-semibold" : "text-slate-300"}`}
                               to={"/products"}>
                             Products
                         </Link>
                     </li>
 
                     <li className="font-[500] transition-all duration-150">
-                        <Link className={`${
-                            path === "/about" ? "text-white font-semibold" : "text-grey-200"
-                        }`}
+                        <Link className={`${path === "/about" ? "text-white font-semibold" : "text-slate-300"}`}
                               to={"/about"}>
                             About
                         </Link>
                     </li>
 
                     <li className="font-[500] transition-all duration-150">
-                        <Link className={`${
-                            path === "/contact" ? "text-white font-semibold" : "text-grey-200"
-                        }`}
+                        <Link className={`${path === "/contact" ? "text-white font-semibold" : "text-slate-300"}`}
                               to={"/contact"}>
                             Contact
                         </Link>
                     </li>
 
-                    {(user && user.id) ? (
-                            <li className="font-[500] transition-all duration-150">
-                                <p>
-                                    <UserMenu />
-                                </p>
-                            </li>
-                        ) : (
-                        <li className="font-[500] transition-all duration-150">
-                            <Link className={`${
-                                path === "/cart" ? "text-white font-semibold" : "text-grey-200"
-                            }`}
-                                  to={"/cart"}>
-                                <Badge
-                                    showZero={true}
-                                    badgeContent={cart?.length || 0}
-                                    color="primary"
-                                    overlap="circular"
-                                    anchorOrigin={{ vertical: "top", horizontal: "right" }}>
-                                    <FaShoppingCart size={25}/>
-                                </Badge>
-                            </Link>
-                        </li>
-                        )};
-
                     <li className="font-[500] transition-all duration-150">
-                        <Link className="flex items-center space-x-2 px-4 py-[6px] bg-greadient-to-r ease-in-out transform"
-                              to={"/login"}>
-                           <FaSignInAlt />
-                            <span>Login</span>
+                        <Link className={`${path === "/cart" ? "text-white font-semibold" : "text-slate-300"}`}
+                              to={"/cart"}>
+                            <Badge
+                                showZero={true}
+                                badgeContent={cart?.length || 0}
+                                color="primary"
+                                overlap="circular"
+                                anchorOrigin={{vertical: "top", horizontal: "right"}}>
+                                <FaShoppingCart size={25}/>
+                            </Badge>
                         </Link>
                     </li>
+
+                    {user && user.id ? (
+                        <li className="font-[500] transition-all duration-150">
+                            <UserMenu />
+                        </li>
+                    ) : (
+                        <li className="font-[500] transition-all duration-150">
+                            <Link className="flex items-center space-x-2 px-4 py-[6px] bg-blue-600 rounded hover:bg-blue-700 transition"
+                                  to={"/login"}>
+                                <FaSignInAlt />
+                                <span>Login</span>
+                            </Link>
+                        </li>
+                    )}
                 </ul>
 
                 <button onClick={() => setNavbarOpen(!navbarOpen)}
-                className="sm:hidden flex items-center sm:mt-0 mt-2">
+                        className="sm:hidden flex items-center">
                     {navbarOpen ? (
                         <RxCross2 className="text-white text-3xl"/>
                     ) : (
                         <IoIosMenu className="text-white text-3xl"/>
-                        )}
-
+                    )}
                 </button>
             </div>
         </div>

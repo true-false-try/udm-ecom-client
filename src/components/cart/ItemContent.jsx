@@ -4,12 +4,11 @@ import {useDispatch} from "react-redux";
 import {decreaseCartQuantity, increaseCartQuantity, removeFromCart} from "../../store/action/index.js";
 import toast from "react-hot-toast";
 import {formatPrice} from "../../utils/formatPrice.js";
-
-function HitOtlineTrash(props: { size: number, className: string }) {
-    return null;
-}
+import truncateText from "../../utils/truncateText.js";
+import {MdDelete} from "react-icons/md";
 
 const ItemContent = ({
+                         id,
                          productId,
                          productName,
                          image,
@@ -18,93 +17,81 @@ const ItemContent = ({
                          price,
                          discount,
                          specialPrice,
-                         cartId
-                     }) =>  {
+                     }) => {
 
-    const [currentQuantity, setCurrentQuantity] = useState(quantity);
+    const [currentQuantity, setCurrentQuantity] = useState(quantity || 1);
     const dispatch = useDispatch();
 
-    const  handleQuantityIncrease = (cartItems) => {
-        dispatch(increaseCartQuantity(
-            cartItems,
-            toast,
-            currentQuantity,
-            setCurrentQuantity
-        ));
+    const itemData = {
+        id: id || productId,
+        productName,
+        image,
+        description,
+        specialPrice,
+        price,
+        quantity: currentQuantity,
     };
 
-    const handleQuantityDecrease = (cartItems) => {
-        if (currentQuantity > 1) {
-            const newQuantity = currentQuantity -1;
-            setCurrentQuantity(newQuantity);
-            dispatch(decreaseCartQuantity(cartItems, newQuantity))
-        }
-    }
+    const handleQuantityIncrease = () => {
+        dispatch(increaseCartQuantity(itemData, toast, currentQuantity, setCurrentQuantity));
+    };
 
-    const removeItemFromCart = (cartItems) => {
-        dispatch(removeFromCart(cartItems, toast))
-    }
+    const handleQuantityDecrease = () => {
+        if (currentQuantity > 1) {
+            const newQuantity = currentQuantity - 1;
+            setCurrentQuantity(newQuantity);
+            dispatch(decreaseCartQuantity(itemData, newQuantity));
+        }
+    };
+
+    const removeItemFromCart = () => {
+        dispatch(removeFromCart(itemData, toast));
+    };
+
+    const displayPrice = specialPrice || price;
 
     return (
-        <div className="grid md:grid-cols-5grid-cols-4 md:text-md text-sm gap-4 items-center border-[1px] border-slate-200">
-            <div className="md:col-span-2 justify-self-start flex flex-col gap-2">
-                <div className="flex md:flesx-row flex-col lg:gap-4 sm:gap-3 gap-0 items-start">
-                    <h3 className="lg:text-[17px] text-sm font-semibold text-slate-600">
-                        {truncateText(productName)}
+        <div className="grid md:grid-cols-5 grid-cols-1 md:text-md text-sm gap-4 items-center border border-slate-200 rounded-lg p-4">
+            <div className="md:col-span-2 flex flex-row gap-4 items-center">
+                <div className="md:w-24 w-20 flex-shrink-0">
+                    <img
+                        src={image}
+                        alt={productName}
+                        className="md:h-24 h-20 w-full object-cover rounded-md"
+                    />
+                </div>
+                <div className="flex flex-col gap-2">
+                    <h3 className="lg:text-[15px] text-sm font-semibold text-slate-700">
+                        {truncateText(productName, 50)}
                     </h3>
-                </div>
-                <div className="md:w-36 sm:w-24">
-                    <img src={image}
-                         alt={productName}
-                         className="md:h-36 sm:h-24 h-12 w-full object-cover rounded-md"/>
-                </div>
-                <div className="flex items-start gap-5 mt-3">
                     <button
-                        onClick={() => {removeItemFromCart({
-                            image,
-                            productName,
-                            description,
-                            specialPrice,
-                            price,
-                            quantity
-                        })}}
-                        className="flex items-center font-semibold space-x-2 px-2 text-xs border-rose-600 text-rose-600 round-md hover:bg-red-50 transition-colors duration-200">
-                        <HitOtlineTrash  size={16} className="text-rose-600"/>
+                        onClick={removeItemFromCart}
+                        className="flex items-center gap-1 text-xs font-semibold text-rose-600 hover:text-rose-800 transition w-fit"
+                    >
+                        <MdDelete size={16} />
                         Remove
                     </button>
                 </div>
             </div>
 
-            <div className="justify-self-center lg:text-[17px] text-sm slate-slate-600 font-semibold">
-                {formatPrice(Number(specialPrice))}
+            <div className="justify-self-start md:justify-self-center lg:text-[17px] text-sm text-slate-600 font-semibold">
+                {formatPrice(Number(displayPrice))}
             </div>
 
-            <div className="justify-self-center">
-                <SetQuantity quantity={currentQuantity}
-                             cardCounter={true}
-                             handeQtyIncrease={() => handleQuantityIncrease({
-                                 image,
-                                 productName,
-                                 description,
-                                 specialPrice,
-                                 price,
-                                 quantity
-                             })}
-                             handleQuantityDecrease={() => handleQuantityDecrease({
-                                 image,
-                                 productName,
-                                 description,
-                                 specialPrice,
-                                 price,
-                                 quantity
-                             })} />
+            <div className="justify-self-start md:justify-self-center">
+                <SetQuantity
+                    quantity={currentQuantity}
+                    cardCounter={true}
+                    handeQtyIncrease={handleQuantityIncrease}
+                    handleQtyDecrease={handleQuantityDecrease}
+                />
             </div>
 
-            <div className="justify-self-center lg:text-[17px] text-sm slate-slate-600 font-semibold">
-                {formatPrice(Number(currentQuantity) * Number(specialPrice))}
+            <div className="justify-self-start md:justify-self-center lg:text-[17px] text-sm text-slate-600 font-semibold">
+                {formatPrice(Number(currentQuantity) * Number(displayPrice))}
             </div>
-
         </div>
     );
 }
+
 export default ItemContent;

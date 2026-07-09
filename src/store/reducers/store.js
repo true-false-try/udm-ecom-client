@@ -5,17 +5,17 @@ import {cartReducer} from "./cartReducer.js";
 import {authReducer} from "./authReducer.js";
 
 
-const  user = localStorage.getItem("auth") ?
+const user = localStorage.getItem("auth") ?
     JSON.parse(localStorage.getItem("auth")) :
-    [];
+    null;
 
-const  cartItems = localStorage.getItem("cartItems") ?
+const cartItems = localStorage.getItem("cartItems") ?
     JSON.parse(localStorage.getItem("cartItems")) :
     [];
 
 const initialState = {
     auth: {user: user},
-    carts: {cart: cartItems},
+    cart: {cart: cartItems},
 }
 
 export const store = configureStore({
@@ -25,7 +25,7 @@ export const store = configureStore({
         cart: cartReducer,
         auth: authReducer,
     },
-    preloadedState:  initialState,
+    preloadedState: initialState,
 });
 
 export default store;

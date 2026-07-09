@@ -4,3 +4,5 @@ const truncateText = (text, charLimit = 90) => {
   }
   return text;
 };
+
+export default truncateText;
