@@ -41,7 +41,7 @@ const Cart = () => {
                 </p>
                 <div className="flex flex-col items-end gap-4">
                     <div className="flex justify-between w-full md:text-lg text-sm font-semibold gap-8">
-
+                        <span>Subtotal</span>
                         <span>{formatPrice(totalPrice)}</span>
                     </div>
                     <Link to="/checkout">
